@@ -1,0 +1,162 @@
+[
+  {
+    "currency": "Bitcoin",
+    "symbol": "BTC",
+    "description": "The first and most widely used decentralized ledger currency,[7] with the highest market capitalization.[8]"
+  },
+  {
+    "currency": "Litecoin",
+    "symbol": "LTC",
+    "description": "One of the first cryptocurrencies to use Scrypt as a hashing algorithm."
+  },
+  {
+    "currency": "Namecoin",
+    "symbol": "NMC",
+    "description": "Also acts as an alternative, decentralized DNS."
+  },
+  {
+    "currency": "Peercoin",
+    "symbol": "PPC",
+    "description": "The first cryptocurrency to use POW and POS functions."
+  },
+  {
+    "currency": "Dogecoin",
+    "symbol": "DOGE",
+    "description": "Based on the Doge internet meme."
+  },
+  {
+    "currency": "Gridcoin",
+    "symbol": "GRC",
+    "description": "Linked to citizen science through the Berkeley Open Infrastructure for Network Computing[18]"
+  },
+  {
+    "currency": "Primecoin",
+    "symbol": "XPM",
+    "description": "Uses the finding of prime chains composed of Cunningham chains and bi-twin chains for proof-of-work."
+  },
+  {
+    "currency": "Ripple",
+    "symbol": "XRP",
+    "description": "Designed for peer to peer debt transfer. Not based on bitcoin."
+  },
+  {
+    "currency": "Nxt",
+    "symbol": "NXT",
+    "description": "Specifically designed as a flexible platform to build applications and financial services around its protocol."
+  },
+  {
+    "currency": "Auroracoin",
+    "symbol": "AUR",
+    "description": "Created as an alternative currency for Iceland, intended to replace the Icelandic kr�na."
+  },
+  {
+    "currency": "Dash",
+    "symbol": "DASH",
+    "description": "A bitcoin-based currency featuring instant transactions, decentralized governance and budgeting, and private transactions."
+  },
+  {
+    "currency": "NEO",
+    "symbol": "NEO",
+    "description": "China based cryptocurrency, formerly ANT Shares and ANT Coins. The names were changed in 2017 to NEO and GAS."
+  },
+  {
+    "currency": "MazaCoin",
+    "symbol": "MZC",
+    "description": "The underlying software is derived from that of another cryptocurrency, ZetaCoin."
+  },
+  {
+    "currency": "Monero",
+    "symbol": "XMR",
+    "description": "Privacy-centric coin using the CryptoNote protocol with improvements for scalability and decentralization."
+  },
+  {
+    "currency": "NEM",
+    "symbol": "XEM",
+    "description": "The first hybrid public/private blockchain solution built from scratch, and first to use the Proof of Importance algorithm using EigenTrust++ reputation system."
+  },
+  {
+    "currency": "Titcoin",
+    "symbol": "TIT",
+    "description": "The first cryptocurrency to be nominated for a major adult industry award.[39]"
+  },
+  {
+    "currency": "Verge",
+    "symbol": "XVG",
+    "description": "Features anonymous transactions using Tor."
+  },
+  {
+    "currency": "Stellar",
+    "symbol": "XLM",
+    "description": "Open-source, decentralized global financial network."
+  },
+  {
+    "currency": "Vertcoin",
+    "symbol": "VTC",
+    "description": "Aims to be ASIC resistant."
+  },
+  {
+    "currency": "Ethereum",
+    "symbol": "ETH",
+    "description": "Supports Turing-complete smart contracts."
+  },
+  {
+    "currency": "Ethereum Classic",
+    "symbol": "ETC",
+    "description": "An alternative version of Ethereum[49] whose blockchain does not include the DAO Hard-fork.[50] Supports Turing-complete smart contracts."
+  },
+  {
+    "currency": "Nano",
+    "symbol": "Nano",
+    "description": "Decentralized, feeless, open-source, peer-to-peer cryptocurrency. First to use a Block Lattice structure."
+  },
+  {
+    "currency": "Tether",
+    "symbol": "USDT",
+    "description": "Tether claims to be backed by USD at a 1 to 1 ratio. The company has been unable to produce promised audits.[54]"
+  },
+  {
+    "currency": "Zcash",
+    "symbol": "ZEC",
+    "description": "The first open, permissionless financial system employing zero-knowledge security."
+  },
+  {
+    "currency": "Bitcoin Cash",
+    "symbol": "BCH",
+    "description": "Hard fork from Bitcoin, Increased Block size from 1mb to 8mb"
+  },
+  {
+    "currency": "EOS.IO",
+    "symbol": "EOS",
+    "description": "Feeless Smart contract platform for decentralized applications and decentralized autonomous corporations with a block time of 500 ms.[57]"
+  },
+  {
+    "currency": "Cardano",
+    "symbol": "ADA",
+    "description": "A proof-of-stake blockchain platform: developed through evidence-based methods and peer-reviewed research.[60][61][62]"
+  },
+  {
+    "currency": "Coinye",
+    "symbol": "KOI",
+    "description": "Used American hip hop artist Kanye West as its mascot, abandoned after he filed a trademark lawsuit."
+  },
+  {
+    "currency": "BitConnect",
+    "symbol": "BCC",
+    "description": "BitConnect was described as an open source, all-in-one bitcoin and crypto community platform but was later discovered to be a Ponzi scheme."
+  },
+  {
+    "currency": "KodakCoin",
+    "symbol": "",
+    "description": "KodakCoin is a \"photographer-centric\" blockchain cryptocurrency used for payments for licensing photographs. "
+  },
+  {
+    "currency": "Petro",
+    "symbol": "",
+    "description": "Stated by Nicol�s Maduro to be backed by Venezuela's reserves of oil. As of August�2018 it does not appear to function as a currency.[66]"
+  },
+  {
+    "currency": "OneCoin",
+    "symbol": "",
+    "description": "A ponzi scheme promoted as a cryptocurrency."
+  }
+]

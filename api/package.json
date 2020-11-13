@@ -1,0 +1,37 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "test": "jest --detectOpenHandles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/EpitechMscPro2020/thecountofmoney_2020_92.git"
+  },
+  "author": "Arthur Jacquemin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EpitechMscPro2020/thecountofmoney_2020_92/issues"
+  },
+  "homepage": "https://github.com/EpitechMscPro2020/thecountofmoney_2020_92#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.14"
+  },
+  "devDependencies": {
+    "@jest/globals": "^26.6.2",
+    "@types/node": "^14.14.7",
+    "faker": "^5.1.0",
+    "jest": "^26.6.3",
+    "mongoose-data-seed": "^2.1.6",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.0.1"
+  },
+  "mdSeed": {
+    "seedersFolder": "./src/db/seed"
+  }
+}
