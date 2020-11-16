@@ -5,7 +5,7 @@
   "main": "./src/app.js",
   "scripts": {
     "dev": "nodemon src/app.js",
-    "test": "jest --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles ./tests"
   },
   "repository": {
     "type": "git",
@@ -20,14 +20,16 @@
   "dependencies": {
     "express": "^4.17.1",
     "joi": "^17.3.0",
-    "mongoose": "^5.10.14"
+    "mongodb-memory-server": "^6.9.2",
+    "mongoose": "^5.10.14",
+    "mongoose-seed": "^0.6.0"
   },
   "devDependencies": {
     "@jest/globals": "^26.6.2",
     "@types/node": "^14.14.7",
+    "cross-env": "^7.0.2",
     "faker": "^5.1.0",
     "jest": "^26.6.3",
-    "mongoose-data-seed": "^2.1.6",
     "nodemon": "^2.0.6",
     "supertest": "^6.0.1"
   },

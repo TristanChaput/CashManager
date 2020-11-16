@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "account"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "number": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "users_permissions_user": {
+      "via": "accounts",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
