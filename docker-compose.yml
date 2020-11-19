@@ -1,0 +1,41 @@
+version: '3'
+services:
+  api:
+    image: strapi/strapi
+    container_name: api
+    build: strapi-api
+    restart: always
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: postgres
+      DATABASE_NAME: strapi
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+    ports:
+      - 8080:8080
+    volumes:
+      - ./images/:/srv/app/public/uploads:z
+    depends_on:
+      - postgres
+    networks:
+      - strapi-app-network
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./data:/var/lib/postgresql/data:z
+    networks:
+      - strapi-app-network
+
+networks:
+  strapi-app-network:
+    driver: bridge
+
+volumes:
+  data:

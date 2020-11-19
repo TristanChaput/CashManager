@@ -1,0 +1,76 @@
+{
+  "name": "strapi-api",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "lint:other": "npm run prettier:other --check",
+    "format": "npm-run-all -p format:*",
+    "format:code": "npm run prettier:code --write",
+    "format:other": "npm run prettier:other --write",
+    "prettier:code": "prettier \"**/*.js\"",
+    "prettier:other": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+    "test:clean": "rimraf ./coverage",
+    "test:e2e": "NODE_ENV=test FORCE_COLOR=true jest --config jest.config.e2e.js --runInBand --verbose --forceExit --detectOpenHandles",
+    "test:all": "npm run test:unit && npm run test:integration",
+    "test:unit": "NODE_ENV=test ./node_modules/.bin/jest --forceExit --detectOpenHandles ./tests/unit",
+    "test:unit:watch": "NODE_ENV=test ./node_modules/.bin/jest --watch --detectOpenHandles ./tests/unit",
+    "test:integration": "NODE_ENV=test ./node_modules/.bin/jest --forceExit --detectOpenHandles ./tests/integration/app.test.js",
+    "test:integration:watch": "NODE_ENV=test ./node_modules/.bin/jest --watch --detectOpenHandles ./tests/integration/app.test.js",
+    "test-ci": "NODE_ENV=test ./node_modules/.bin/jest --detectOpenHandles --forceExit --watchAll=false --reporters='jest-junit'"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^11.0.0",
+    "@jest/environment": "^26.6.2",
+    "@jest/globals": "^26.6.2",
+    "babel-eslint": "^10.1.0",
+    "commitlint": "^11.0.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security-node": "^1.0.14",
+    "husky": "^4.3.0",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "junit": "^1.4.9",
+    "lint-staged": "^10.5.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.1.2",
+    "sqlite3": "latest",
+    "supertest": "^6.0.1"
+  },
+  "dependencies": {
+    "knex": "^0.21.12",
+    "pg": "^8.5.1",
+    "strapi": "3.3.3",
+    "strapi-admin": "3.3.3",
+    "strapi-connector-bookshelf": "3.3.3",
+    "strapi-plugin-content-manager": "3.3.3",
+    "strapi-plugin-content-type-builder": "3.3.3",
+    "strapi-plugin-documentation": "3.3.3",
+    "strapi-plugin-email": "3.3.3",
+    "strapi-plugin-upload": "3.3.3",
+    "strapi-plugin-users-permissions": "3.3.3",
+    "strapi-utils": "3.3.3"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "b6208031-460e-467c-9a66-1715c768b320"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

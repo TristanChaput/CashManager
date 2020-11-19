@@ -1,10 +1,9 @@
-const { Seeder } = require('mongoose-data-seed');
+const {Seeder} = require('mongoose-data-seed');
 const User = require('../models/userModel');
 
 const data = [{
-    username: 'Arthur',
-    email: 'arthur@email.com',
-    password: 'password'
+    name: 'Jason',
+    accounts: [1, 2, 3]
 }];
 
 class UsersSeeder extends Seeder {
