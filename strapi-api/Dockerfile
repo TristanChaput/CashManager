@@ -1,17 +1,17 @@
 FROM strapi/base as build-back
 
-RUN MKDIR -p /srv/app
-RUN sudo chown $USER:$USER /srv/app
-RUN sudo chmod 755 /srv/app
+RUN mkdir -p /srv/app
+RUN chown $USER:$USER /srv/app
+RUN chmod 755 /srv/app
 WORKDIR /srv/app
 
-COPY package*.json yarn.lock /srv/app/
+COPY package.json yarn.lock /srv/app/
 
-RUN yarn install
+RUN yarn
 
-COPY . /srv/app
+COPY . /srv/app/
 
-RUN NODE_ENV=production yarn build
+RUN NODE_ENV=development yarn build
 
 EXPOSE 8080
 
