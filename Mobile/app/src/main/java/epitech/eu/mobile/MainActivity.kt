@@ -11,10 +11,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // get reference to all views
-        var et_user_name = findViewById(R.id.et_user_name) as EditText
-        var et_password = findViewById(R.id.et_password) as EditText
-        var btn_reset = findViewById(R.id.btn_reset) as Button
-        var btn_submit = findViewById(R.id.btn_submit) as Button
+        var et_user_name = findViewById<EditText>(R.id.et_user_name)
+        var et_password = findViewById<EditText>(R.id.et_password)
+        var btn_reset = findViewById<Button>(R.id.btn_reset)
+        var btn_submit = findViewById<Button>(R.id.btn_submit)
 
         btn_reset.setOnClickListener {
             // clearing user_name and password edit text views on reset button click
@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_reset.setOnClickListener {
-
-            // TRISTAN REDIRIGE VERS TA PAGE ICI
-
+            setContentView(R.layout.articles)
         }
         // set on-click listener
         btn_submit.setOnClickListener {
