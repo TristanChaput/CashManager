@@ -11,8 +11,8 @@
  */
 
 const fs = require('fs');
-
 const accounts = require('../../data/accounts.json');
+const products = require('../../data/products.json');
 const users = require('../../data/users_permissions_user');
 
 async function isFirstRun() {
@@ -115,6 +115,12 @@ async function importUsers() {
   });
 }
 
+async function importProducts() {
+  return products.map(async (product) => {
+    await createEntry('product', product, { image: getFileData(`${product.slug}.jpg`) });
+  });
+}
+
 async function importAccounts() {
   return accounts.map(async (account) => {
     await createEntry('account', account);
@@ -125,6 +131,7 @@ async function importSeedData() {
   // Create all entries
   await importUsers();
   await importAccounts();
+  await importProducts();
 
   await setPermissions('authenticated', {
     account: ['count', 'find', 'findone', 'create', 'update', 'delete'],

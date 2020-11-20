@@ -71,6 +71,10 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "cart": {
+      "via": "users_permissions_user",
+      "model": "cart"
     }
   }
 }

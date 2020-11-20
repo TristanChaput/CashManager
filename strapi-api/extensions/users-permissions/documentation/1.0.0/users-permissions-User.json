@@ -1347,6 +1347,31 @@
                 "type": "string"
               }
             }
+          },
+          "cart": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "users_permissions_user": {
+                "type": "string"
+              },
+              "products": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1394,6 +1419,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "cart": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
