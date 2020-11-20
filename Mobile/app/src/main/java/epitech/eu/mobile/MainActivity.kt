@@ -22,6 +22,11 @@ class MainActivity : AppCompatActivity() {
             et_password.setText("")
         }
 
+        btn_reset.setOnClickListener {
+
+            // TRISTAN REDIRIGE VERS TA PAGE ICI
+
+        }
         // set on-click listener
         btn_submit.setOnClickListener {
             val user_name = et_user_name.text;
