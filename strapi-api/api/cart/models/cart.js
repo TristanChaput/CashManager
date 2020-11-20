@@ -5,4 +5,19 @@
  * to customize this model
  */
 
-module.exports = {};
+module.exports = {
+  /**
+   * Triggered before user creation.
+   */
+  lifecycles: {
+    async beforeUpdate(params, data) {
+      const cart = await strapi.query('cart').findOne({ id: data.id });
+
+      const { price } = cart.products.reduce((acc, curr) => ({
+        price: acc.price + curr.price
+      }));
+
+      data.total = price;
+    },
+  },
+};

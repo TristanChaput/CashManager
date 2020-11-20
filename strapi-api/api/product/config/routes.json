@@ -3,26 +3,17 @@
     {
       "method": "GET",
       "path": "/products",
-      "handler": "product.find",
-      "config": {
-        "policies": []
-      }
+      "handler": "product.find"
     },
     {
       "method": "GET",
       "path": "/products/count",
-      "handler": "product.count",
-      "config": {
-        "policies": []
-      }
+      "handler": "product.count"
     },
     {
       "method": "GET",
       "path": "/products/:id",
-      "handler": "product.findOne",
-      "config": {
-        "policies": []
-      }
+      "handler": "product.findOne"
     },
     {
       "method": "POST",

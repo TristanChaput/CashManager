@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "carts",
   "info": {
-    "name": "cart"
+    "name": "cart",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -19,6 +20,10 @@
       "collection": "product",
       "via": "carts",
       "dominant": true
+    },
+    "total": {
+      "type": "decimal",
+      "default": 0
     }
   }
 }

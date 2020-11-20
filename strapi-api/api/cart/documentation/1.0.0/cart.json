@@ -629,6 +629,10 @@
                 }
               }
             }
+          },
+          "total": {
+            "type": "number",
+            "default": 0
           }
         }
       },
@@ -642,6 +646,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "total": {
+            "type": "number",
+            "default": 0
           },
           "created_by": {
             "type": "string"

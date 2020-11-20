@@ -16,7 +16,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - ./images/:/srv/app/public/uploads:z
+      - ./data/:/srv/app/public/uploads:z
     depends_on:
       - postgres
     networks:
