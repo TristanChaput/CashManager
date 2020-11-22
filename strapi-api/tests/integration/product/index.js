@@ -2,33 +2,32 @@
 
 const { describe, it, expect } = require('@jest/globals');
 const request = require('supertest');
-const accounts = require('../../../data/accounts.json');
+const products = require('../../../data/products.json');
 
-describe('account integration test', () => {
-  it('should return the accounts of the user', async done => {
+describe('product integration test', () => {
+  it('should return the list of products', async done => {
     request(strapi.server)
-      .get('/accounts')
+      .get('/products')
       .set('accept', 'application/json')
       .set('Content-Type', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
       .then(data => {
-        expect(data.body).toHaveLength(accounts.length());
-        expect(data.body).toBe(accounts);
+        expect(data.body).toBe(products);
       });
 
     done();
   });
 
-  it('should return the requested account', async done => {
+  it('should return the requested product', async done => {
     request(strapi.server)
-      .get(`/accounts/${accounts[0].id}`)
+      .get(`/products/${products[0].id}`)
       .set('accept', 'application/json')
       .set('Content-Type', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200)
       .then(data => {
-        expect(data.body).toBe(accounts[0]);
+        expect(data.body).toBe(products[0]);
       });
 
     done();

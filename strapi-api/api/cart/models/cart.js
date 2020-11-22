@@ -13,9 +13,7 @@ module.exports = {
     async beforeUpdate(params, data) {
       const cart = await strapi.query('cart').findOne({ id: data.id });
 
-      const { price } = cart.products.reduce((acc, curr) => ({
-        price: acc.price + curr.price
-      }));
+      const { price } = await strapi.services.cart.calcTotalPrice(cart.products);
 
       data.total = price;
     },

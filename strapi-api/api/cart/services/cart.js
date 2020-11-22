@@ -5,4 +5,12 @@
  * to customize this service
  */
 
-module.exports = {};
+module.exports = {
+  async calcTotalPrice (products) {
+    const { price } = products.reduce((acc, curr) => ({
+      price: acc.price + curr.price
+    }));
+
+    return price;
+  }
+};
