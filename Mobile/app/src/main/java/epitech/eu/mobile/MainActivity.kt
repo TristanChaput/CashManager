@@ -1,10 +1,18 @@
 package epitech.eu.mobile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import java.io.IOException
 import android.widget.*
 
 class MainActivity : AppCompatActivity() {
+    val JSON = "application/json; charset=utf-8".toMediaType()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,7 +28,23 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text;
             Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
 
-            setContentView(R.layout.articles)
+            val url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}"
+
+            val request = Request.Builder().url(url).build()
+
+            val client = OkHttpClient()
+
+            client.newCall(request).enqueue(object: Callback {
+                override fun onFailure(call: Call, e: IOException) {
+                    println("Failed to execute request")
+                    println(e)
+                }
+
+                override fun onResponse(call: Call, response: Response) {
+                    println("GOOD REQUEST to execute request")
+                    println(response)
+                }
+            })
 
         }
     }
