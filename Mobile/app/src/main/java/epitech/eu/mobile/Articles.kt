@@ -15,7 +15,7 @@ class Articles : AppCompatActivity() {
         val listArticles = ArrayList<Article>()
 
         for (i in 0..4) {
-            listArticles.add(Article("123", "test", 5.0))
+            listArticles.add(Article("123", 0,"test", "description voyage",5.0))
         }
         //A COMPLETER AVEC L'API
 
