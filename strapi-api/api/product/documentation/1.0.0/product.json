@@ -628,6 +628,9 @@
                     "type": "string"
                   }
                 },
+                "total": {
+                  "type": "number"
+                },
                 "created_by": {
                   "type": "string"
                 },
