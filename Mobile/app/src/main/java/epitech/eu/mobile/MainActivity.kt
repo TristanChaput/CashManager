@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text;
             Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
 
-            // your code to validate the user_name and password combination
-            // and verify the same
+            setContentView(R.layout.articles)
 
         }
     }
