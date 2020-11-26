@@ -29,9 +29,7 @@ it('strapi is defined', async (done) => {
   done();
 });
 
-require('./auth');
-require('./pet');
-require('./reservation');
-require('./upload');
 require('./user');
-require('./veterinary');
+require('./product');
+require('./cart');
+require('./account');
