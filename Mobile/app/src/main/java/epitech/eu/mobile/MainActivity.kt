@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import java.io.IOException
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     val JSON = "application/json; charset=utf-8".toMediaType()
@@ -17,25 +18,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // get reference to all views
-        var et_user_name = findViewById<EditText>(R.id.et_user_name)
-        var et_password = findViewById<EditText>(R.id.et_password)
-        var btn_reset = findViewById<Button>(R.id.btn_reset)
-        var btn_submit = findViewById<Button>(R.id.btn_submit)
+        val etUserName = findViewById<EditText>(R.id.et_user_name)
+        val etPassword = findViewById<EditText>(R.id.et_password)
+        val btnSubmit = findViewById<Button>(R.id.btn_submit)
 
-        btn_reset.setOnClickListener {
-            // clearing user_name and password edit text views on reset button click
-            et_user_name.setText("")
-            et_password.setText("")
-        }
-
-        btn_reset.setOnClickListener {
-            setContentView(R.layout.articles)
-        }
         // set on-click listener
-        btn_submit.setOnClickListener {
-            val user_name = et_user_name.text;
-            val password = et_password.text;
-            Toast.makeText(this@MainActivity, user_name, Toast.LENGTH_LONG).show()
+        btnSubmit.setOnClickListener {
+            val userName = etUserName.text;
+            val password = etPassword.text;
+            Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
 
 
             val url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}"
