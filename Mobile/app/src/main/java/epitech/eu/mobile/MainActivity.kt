@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text;
             Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
 
-
             val url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}"
 
             val request = Request.Builder().url(url).build()
@@ -46,8 +45,6 @@ class MainActivity : AppCompatActivity() {
                     println(response)
                 }
             })
-            // your code to validate the user_name and password combination
-            // and verify the same
 
         }
     }

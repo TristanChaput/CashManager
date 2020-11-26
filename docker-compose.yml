@@ -22,10 +22,10 @@ services:
     networks:
       - strapi-app-network
 
-  mobile:
-    build: Mobile
-    volumes:
-      - ./data/:/srv/app/mobile:z
+#  mobile:
+#    build: Mobile
+#    volumes:
+#      - ./data/:/srv/app/mobile:z
 
   postgres:
     image: postgres
