@@ -565,9 +565,6 @@
                   "type": "string"
                 }
               },
-              "avatar": {
-                "type": "string"
-              },
               "cart": {
                 "type": "string"
               },

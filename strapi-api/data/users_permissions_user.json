@@ -1,18 +1,19 @@
 [
   {
     "id": 1,
-    "username": "Jason Doe",
+    "username": "monserver.com",
     "email": "jason@doe.fr",
     "provider": "local",
-    "password": "$2a$10$4WRPJAIuG/36T9e1Mw1sFul1e9UCitJkcVcG9FEV1Cawq0KAa8XBa",
+    "password": null,
     "resetPasswordToken": null,
     "confirmationToken": null,
     "confirmed": 1,
     "blocked": 0,
     "role": 1,
+    "cart": 1,
     "created_by": 1,
     "updated_by": 1,
-    "created_at": 1605354733485,
-    "updated_at": 1605355046795
+    "created_at": 1605877692619,
+    "updated_at": 1606491656853
   }
 ]

@@ -117,7 +117,9 @@ async function importUsers() {
 
 async function importProducts() {
   return products.map(async (product) => {
-    await createEntry('product', product, { image: getFileData(`${product.slug}.jpg`) });
+    await createEntry('product', product, {
+      image: getFileData(`${product.slug}.jpg`)
+    });
   });
 }
 
