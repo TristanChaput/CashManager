@@ -63,18 +63,9 @@
       "collection": "account",
       "via": "users_permissions_user"
     },
-    "avatar": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "images"
-      ],
-      "plugin": "upload",
-      "required": false
-    },
     "cart": {
-      "via": "users_permissions_user",
-      "model": "cart"
+      "model": "cart",
+      "via": "users_permissions_user"
     }
   }
 }
