@@ -13,7 +13,7 @@ describe('product integration test', () => {
       .expect('Content-Type', /json/)
       .expect(200)
       .then(data => {
-        expect(data.body).toBe(products);
+        expect(data.body).toHaveLength(products.length());
       });
 
     done();
