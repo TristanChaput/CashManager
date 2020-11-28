@@ -5,14 +5,15 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.GsonBuilder
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
-import android.widget.*
+import java.net.URI.create
+
 
 class MainActivity : AppCompatActivity() {
-    val JSON = "application/json; charset=utf-8".toMediaType()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,26 +27,37 @@ class MainActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val userName = etUserName.text;
             val password = etPassword.text;
-            Toast.makeText(this@MainActivity, userName, Toast.LENGTH_LONG).show()
 
-            val url = "http://api.openweathermap.org/data/2.5/forecast?id=524901&appid={API key}"
+            val url = "http://192.168.1.80:8080/auth/local"
 
-            val request = Request.Builder().url(url).build()
+            val JSON = "application/json; charset=utf-8".toMediaType()
+            val json = "{\"identifier\": \"$userName\", \"password\": \"$password\"}"
+            val body = json.toRequestBody(JSON)
+            val request = Request.Builder().method("POST", body).header("Content-Type", "application/json").url(url).build()
 
             val client = OkHttpClient()
 
             client.newCall(request).enqueue(object: Callback {
                 override fun onFailure(call: Call, e: IOException) {
                     println("Failed to execute request")
-                    println(e)
                 }
 
-                override fun onResponse(call: Call, response: Response) {
-                    println("GOOD REQUEST to execute request")
-                    println(response)
+                override fun onResponse(call: Call, response: okhttp3.Response) {
+                    val body = response?.body?.string()
+
+                    val gson = GsonBuilder().create()
+
+                    val tmp = gson.fromJson(body, Response::class.java)
+                    if (tmp.jwt == null) {
+                        println("raté")
+                    } else {
+                        println("ouaiiii")
+                    }
                 }
             })
 
         }
     }
 }
+
+class Response(val jwt: String)
