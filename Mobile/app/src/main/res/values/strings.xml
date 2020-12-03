@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Mobile</string>
+    <string name="app_name">CA$H MANAGER</string>
     <string name="login">Login</string>
-    <string name="user_name">User Name</string>
+    <string name="user_name">Username</string>
     <string name="password">Password</string>
     <string name="submit">Login</string>
+    <string name="cash_manager">CA$H MANAGER</string>
+    <string name="croisi_re">croisière</string>
 </resources>
