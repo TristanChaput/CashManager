@@ -1,16 +1,19 @@
 package epitech.eu.mobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.GsonBuilder
-import okhttp3.*
+import okhttp3.Call
+import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
-import java.net.URI.create
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,9 +52,17 @@ class MainActivity : AppCompatActivity() {
 
                     val tmp = gson.fromJson(body, Response::class.java)
                     if (tmp.jwt == null) {
-                        println("raté")
+                        this@MainActivity.runOnUiThread(Runnable {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Authentification failed",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        })
+
                     } else {
-                        println("ouaiiii")
+                        val intent = Intent(this@MainActivity, Articles::class.java)
+                        startActivity(intent)
                     }
                 }
             })
