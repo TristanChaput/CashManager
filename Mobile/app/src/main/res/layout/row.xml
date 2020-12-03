@@ -59,7 +59,7 @@
             android:layout_marginBottom="55dp"
             android:background="@color/black"
             android:gravity="center_vertical|center_horizontal"
-            android:text="000000€"
+            android:text="@string/_000000"
             android:textColor="@color/white"
             android:textSize="20sp" />
     </RelativeLayout>

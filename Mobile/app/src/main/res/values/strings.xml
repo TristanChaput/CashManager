@@ -7,6 +7,6 @@
     <string name="cash_manager">CA$H MANAGER</string>
     <string name="title">Title</string>
     <string name="description">Description</string>
-    <string name="_0">0€</string>
     <string name="image">image</string>
+    <string name="_000000">000000€</string>
 </resources>
