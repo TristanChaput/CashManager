@@ -619,7 +619,7 @@
                 "id": {
                   "type": "string"
                 },
-                "users_permissions_user": {
+                "user": {
                   "type": "string"
                 },
                 "products": {

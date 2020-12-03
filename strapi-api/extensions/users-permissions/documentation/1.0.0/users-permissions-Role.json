@@ -561,11 +561,8 @@
                 "role": {
                   "type": "string"
                 },
-                "accounts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "account": {
+                  "type": "string"
                 },
                 "cart": {
                   "type": "string"

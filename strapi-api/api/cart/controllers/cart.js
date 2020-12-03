@@ -9,12 +9,18 @@ const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   /**
-   * get user cart.
+   * Add product to user cart
    */
+  async add(ctx) {
+    const entity = await strapi.services.cart.findOne({ user: ctx.state.user.id });
 
-  async find(ctx) {
-    const entities = await strapi.services.cart.find({...ctx.query, user: ctx.state.user.id });
+    if (entity) {
 
-    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.cart }));
+      return strapi.services.cart.update(entity.id, {
+        products: [...entity.products.map(product => product.id), ctx.params.id]
+      })
+    }
+    ctx.badRequest('You can\'t perform this action');
   },
+
 };

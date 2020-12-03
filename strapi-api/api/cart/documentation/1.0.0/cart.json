@@ -1,5 +1,76 @@
 {
   "paths": {
+    "/carts/add/{id}": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Cart"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/carts": {
       "get": {
         "deprecated": false,
@@ -522,7 +593,7 @@
           "id": {
             "type": "string"
           },
-          "users_permissions_user": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -559,11 +630,8 @@
               "role": {
                 "type": "string"
               },
-              "accounts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "account": {
+                "type": "string"
               },
               "cart": {
                 "type": "string"
@@ -635,7 +703,7 @@
       },
       "NewCart": {
         "properties": {
-          "users_permissions_user": {
+          "user": {
             "type": "string"
           },
           "products": {

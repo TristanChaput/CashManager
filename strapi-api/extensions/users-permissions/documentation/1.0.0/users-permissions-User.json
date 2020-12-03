@@ -1251,33 +1251,30 @@
               }
             }
           },
-          "accounts": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "number",
-                "amount"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "number": {
-                  "type": "integer"
-                },
-                "amount": {
-                  "type": "number"
-                },
-                "users_permissions_user": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "account": {
+            "required": [
+              "id",
+              "number",
+              "amount"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "number": {
+                "type": "integer"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "user": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
@@ -1289,7 +1286,7 @@
               "id": {
                 "type": "string"
               },
-              "users_permissions_user": {
+              "user": {
                 "type": "string"
               },
               "products": {
@@ -1350,11 +1347,8 @@
           "role": {
             "type": "string"
           },
-          "accounts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "account": {
+            "type": "string"
           },
           "cart": {
             "type": "string"

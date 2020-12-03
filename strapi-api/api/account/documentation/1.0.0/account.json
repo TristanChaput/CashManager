@@ -530,7 +530,7 @@
           "amount": {
             "type": "number"
           },
-          "users_permissions_user": {
+          "user": {
             "required": [
               "id",
               "username",
@@ -567,11 +567,8 @@
               "role": {
                 "type": "string"
               },
-              "accounts": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "account": {
+                "type": "string"
               },
               "cart": {
                 "type": "string"
@@ -598,7 +595,7 @@
           "amount": {
             "type": "number"
           },
-          "users_permissions_user": {
+          "user": {
             "type": "string"
           },
           "created_by": {

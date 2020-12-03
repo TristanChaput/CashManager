@@ -2,9 +2,9 @@ package epitech.eu.mobile
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.GsonBuilder
 import okhttp3.Call
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             val userName = etUserName.text;
             val password = etPassword.text;
 
-            val url = "http://192.168.1.80:8080/auth/local"
+            val url = "http://192.168.1.49:8080/auth/local"
 
             val JSON = "application/json; charset=utf-8".toMediaType()
             val json = "{\"identifier\": \"$userName\", \"password\": \"$password\"}"
