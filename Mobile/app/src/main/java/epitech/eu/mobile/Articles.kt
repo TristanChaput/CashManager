@@ -14,7 +14,7 @@ class Articles : AppCompatActivity() {
 
         var listView = findViewById<ListView>(R.id.articles_lv)
         var list = mutableListOf<Article>()
-        list.add(Article("123", R.drawable.croisiere, "Croisiere", "description voyage", 5.0))
+        list.add(Article("123", R.drawable.croisiere, "Croisiere maldives", "description voyage", 5.0))
 
         //A COMPLETER AVEC L'API
 
@@ -23,7 +23,7 @@ class Articles : AppCompatActivity() {
         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             Toast.makeText(
                 this@Articles,
-                "you select " + list.get(position).name + " travel",
+                "You add to your cart " + list.get(position).name + " travel",
                 Toast.LENGTH_LONG
             ).show()
         }
