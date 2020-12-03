@@ -1,5 +1,6 @@
 package epitech.eu.mobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -54,10 +55,18 @@ class MainActivity : AppCompatActivity() {
                     val gson = GsonBuilder().create()
 
                     val tmp = gson.fromJson(body, Response::class.java)
-                    if (tmp.jwt == "") {
-                        println("raté")
+                    if (tmp.jwt == null) {
+                        this@MainActivity.runOnUiThread(Runnable {
+                            Toast.makeText(
+                                this@MainActivity,
+                                "Authentification failed",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        })
+
                     } else {
-                        println("ouaiiii")
+                        val intent = Intent(this@MainActivity, Articles::class.java)
+                        startActivity(intent)
                     }
                 }
             })
