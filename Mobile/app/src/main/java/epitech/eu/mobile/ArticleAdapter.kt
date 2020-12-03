@@ -18,12 +18,10 @@ class ArticleAdapter(var ctx: Context, var resources: Int, var items: List<Artic
         val view: View = layoutInflater.inflate(resources, null)
         val imageView: ImageView = view.findViewById(R.id.image)
         val titleTextView: TextView = view.findViewById(R.id.TextViewTitle)
-        val descriptionTextView: TextView = view.findViewById(R.id.TextViewDescription)
         val priceTextView: TextView = view.findViewById(R.id.TextViewPrice)
         var anArticle: Article = items[position]
         imageView.setImageDrawable(ctx.resources.getDrawable(anArticle.img, null))
         titleTextView.text = anArticle.name
-        descriptionTextView.text = anArticle.description
         priceTextView.text = anArticle.prix.toString().plus("€")
         return view
     }

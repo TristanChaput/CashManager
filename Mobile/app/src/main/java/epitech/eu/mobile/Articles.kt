@@ -14,7 +14,14 @@ class Articles : AppCompatActivity() {
 
         var listView = findViewById<ListView>(R.id.articles_lv)
         var list = mutableListOf<Article>()
-        list.add(Article("123", R.drawable.croisiere, "Croisiere maldives", "description voyage", 5.0))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere maldives ",      "", 4999.99))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere costa rica ",    "", 6299.99))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere iles canaries ", "", 3999.99))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere grece ",         "", 7899.99))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere turquie ",       "", 5666.0))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere maroc ",         "", 3000.0))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere indonesie ",     "", 3333.0))
+        list.add(Article("123", R.drawable.croisiere, " Croisiere las vegas ",     "", 9999.99))
 
         //A COMPLETER AVEC L'API
 
