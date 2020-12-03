@@ -59,13 +59,13 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "accounts": {
-      "collection": "account",
-      "via": "users_permissions_user"
+    "account": {
+      "via": "user",
+      "model": "account"
     },
     "cart": {
-      "model": "cart",
-      "via": "users_permissions_user"
+      "via": "user",
+      "model": "cart"
     }
   }
 }

@@ -11,10 +11,10 @@
     "draftAndPublish": false
   },
   "attributes": {
-    "users_permissions_user": {
-      "via": "cart",
+    "user": {
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "cart"
     },
     "products": {
       "collection": "product",

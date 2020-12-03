@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/carts/add/:id",
+      "handler": "cart.add",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/carts",
       "handler": "cart.find",
