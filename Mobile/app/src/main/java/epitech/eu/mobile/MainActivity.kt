@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btnSubmit.setOnClickListener {
-            /*val userName = etUserName.text;
+            val userName = etUserName.text;
             val password = etPassword.text;
 
             val url = "http://192.168.1.49:8080/auth/local"
@@ -69,9 +69,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
-            })*/
-            val intent = Intent(this@MainActivity, Articles::class.java)
-            startActivity(intent)
+            })
         }
     }
 }
