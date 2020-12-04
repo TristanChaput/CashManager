@@ -17,8 +17,8 @@
       "via": "cart"
     },
     "products": {
-      "collection": "product",
       "via": "carts",
+      "collection": "product",
       "dominant": true
     },
     "total": {

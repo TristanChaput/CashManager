@@ -11,11 +11,7 @@ module.exports = {
    */
   lifecycles: {
     async beforeUpdate(params, data) {
-      const cart = await strapi.query('cart').findOne({ id: data.id });
-
-      const { price } = await strapi.services.cart.calcTotalPrice(cart.products);
-
-      data.total = price;
+      data.total = await strapi.services.cart.calcTotalPrice(data.id);
     },
   },
 };

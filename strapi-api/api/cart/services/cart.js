@@ -7,10 +7,11 @@
 
 module.exports = {
   async calcTotalPrice (products) {
-    const { price } = products.reduce((acc, curr) => ({
-      price: acc.price + curr.price
-    }));
-
-    return price;
+    return products.reduce((sum, curr) => {
+      if (!isNaN(curr.price)) {
+        return sum + curr.price;
+      }
+      return sum + 0;
+    }, 0);
   }
 };
