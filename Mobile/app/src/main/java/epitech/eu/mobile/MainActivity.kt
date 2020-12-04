@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
 
             client.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
-                    println("Failed to execute request")
+                    println("Failed to execute request : $e")
                 }
 
                 override fun onResponse(call: Call, response: okhttp3.Response) {
