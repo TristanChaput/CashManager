@@ -5,5 +5,8 @@
     <string name="password">Password</string>
     <string name="submit">Login</string>
     <string name="cash_manager">CA$H MANAGER</string>
-    <string name="croisi_re">croisière</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="image">image</string>
+    <string name="_000000">000000€</string>
 </resources>
