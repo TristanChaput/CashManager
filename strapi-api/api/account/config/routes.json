@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/accounts/pay",
+      "handler": "account.pay",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/accounts",
       "handler": "account.find",

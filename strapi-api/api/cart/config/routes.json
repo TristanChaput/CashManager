@@ -2,8 +2,16 @@
   "routes": [
     {
       "method": "POST",
-      "path": "/carts/add/:id",
+      "path": "/carts/add",
       "handler": "cart.add",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/carts/remove",
+      "handler": "cart.remove",
       "config": {
         "policies": []
       }
