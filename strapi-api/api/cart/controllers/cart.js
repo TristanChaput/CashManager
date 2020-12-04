@@ -15,9 +15,22 @@ module.exports = {
     const entity = await strapi.services.cart.findOne({ user: ctx.state.user.id });
 
     if (entity) {
-
       return strapi.services.cart.update(entity.id, {
-        products: [...entity.products.map(product => product.id), ctx.params.id]
+        products: [...entity.products.map(product => product.id), ctx.request.body.product]
+      })
+    }
+    ctx.badRequest('You can\'t perform this action');
+  },
+
+  /**
+   * Remove product to user cart
+   */
+  async remove(ctx) {
+    const entity = await strapi.services.cart.findOne({ user: ctx.state.user.id });
+
+    if (entity) {
+      return strapi.services.cart.update(entity.id, {
+        products: [...entity.products.filter(product => product.id !== ctx.request.body.product)]
       })
     }
     ctx.badRequest('You can\'t perform this action');
