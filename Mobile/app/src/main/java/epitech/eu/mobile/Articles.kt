@@ -12,7 +12,7 @@ class Articles : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles)
 
-        var listView = findViewById<ListView>(R.id.articles_lv)
+        var listView = findViewById<ListView>(R.id.recycler_view_articles)
         var list = mutableListOf<Article>()
         list.add(Article("123", R.drawable.croisiere, "Croisiere maldives",      "", 4999.99))
         list.add(Article("123", R.drawable.croisiere, "Croisiere costa rica",    "", 6299.99))
@@ -26,7 +26,6 @@ class Articles : AppCompatActivity() {
         //A COMPLETER AVEC L'API
 
         listView.adapter = ArticleAdapter(this, R.layout.row, list)
-
         listView.setOnItemClickListener { parent: AdapterView<*>, view: View, position: Int, id: Long ->
             Toast.makeText(
                 this@Articles,
