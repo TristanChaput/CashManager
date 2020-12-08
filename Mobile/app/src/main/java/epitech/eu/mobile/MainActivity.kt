@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         })
 
                     } else {
-                        val intent = Intent(this@MainActivity, Articles::class.java)
+                        val intent = Intent(this@MainActivity, ArticleActivity::class.java)
                         startActivity(intent)
                     }
                 }

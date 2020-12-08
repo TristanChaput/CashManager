@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mobile"
         tools:targetApi="m">
-        <activity android:name=".Articles" />
+        <activity android:name=".ArticleActivity" />
         <activity
             android:name=".MainActivity">
             <intent-filter>
