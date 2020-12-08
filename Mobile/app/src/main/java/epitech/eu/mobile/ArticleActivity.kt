@@ -20,9 +20,6 @@ class ArticleActivity : AppCompatActivity() {
         recyclerView.adapter = ArticleAdapter(articleList)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-
-        recyclerView.()
-
     }
 
     private fun generateArticleList(): List<Article>{
