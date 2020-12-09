@@ -7,9 +7,27 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_articles"
-        android:padding="4dp"
-        android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/article_item"/>
+        android:clipToPadding="false"
+        android:padding="4dp"
+        android:layout_above="@id/buttons"
+        tools:listitem="@layout/article_item" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:padding="4dp"
+        android:clipToPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="insertArticle"
+            android:text="Add article with QRCODE" />
+
+    </LinearLayout>
 </RelativeLayout>

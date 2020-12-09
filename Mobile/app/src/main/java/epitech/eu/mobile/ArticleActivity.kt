@@ -11,18 +11,25 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class ArticleActivity : AppCompatActivity() {
+    private val articleList = generateArticleList()
+    private val adapter = ArticleAdapter(articleList)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles)
 
-        val articleList = generateArticleList()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
-        recyclerView.adapter = ArticleAdapter(articleList)
+        recyclerView.adapter = this.adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
     }
 
-    private fun generateArticleList(): List<Article>{
+    fun insertArticle(view: View){
+        articleList.add(Article("123", R.drawable.croisiere, "Croisiere qrcode",      "", 567.00))
+        adapter.notifyItemInserted(articleList.size-1)
+    }
+
+    private fun generateArticleList(): ArrayList<Article>{
         val listArticle = ArrayList<Article>()
 
         //A COMPLETER AVEC L'API
