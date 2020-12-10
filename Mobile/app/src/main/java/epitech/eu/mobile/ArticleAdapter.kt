@@ -7,10 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleAdapter(
-    private val articleList: List<Article>,
-    private val listener: OnArticleClickListener
-) :
+class ArticleAdapter(private val articleList: ArrayList<Article>, private val listener: ArticleListener) :
     RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
@@ -29,8 +26,7 @@ class ArticleAdapter(
 
     override fun getItemCount() = articleList.size
 
-    inner class ArticleViewHolder(articleView: View) : RecyclerView.ViewHolder(articleView),
-        View.OnClickListener {
+    inner class ArticleViewHolder(articleView: View) : RecyclerView.ViewHolder(articleView), View.OnClickListener{
         val imageView: ImageView = articleView.findViewById(R.id.image_view)
         val textViewTitle: TextView = articleView.findViewById(R.id.TextViewTitle)
         val textViewPrice: TextView = articleView.findViewById(R.id.TextViewPrice)
@@ -41,13 +37,17 @@ class ArticleAdapter(
 
         override fun onClick(v: View?) {
             val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onArticleClick(position)
+            if(position != RecyclerView.NO_POSITION) {
+                listener.articleEvent(ListenerType.OnArticleClickListener(position))
             }
         }
     }
 
-    interface OnArticleClickListener {
-        fun onArticleClick(position: Int)
+    sealed class ListenerType {
+        class OnArticleClickListener(val position: Int): ListenerType()
+    }
+
+    interface ArticleListener{
+        fun articleEvent(clicked: ListenerType)
     }
 }
