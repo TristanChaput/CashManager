@@ -21,18 +21,6 @@
             android:scaleType="fitCenter"
             android:src="@mipmap/ic_launcher" />
 
-        <ImageView
-            android:id="@+id/image_add_cart"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="33dp"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="275dp"
-            android:layout_marginRight="275dp"
-            android:layout_marginBottom="70dp"
-            app:srcCompat="@drawable/ic_add_shopping_cart" />
-
         <TextView
             android:id="@+id/TextViewTitle"
             android:layout_width="wrap_content"
@@ -47,8 +35,8 @@
             android:layout_marginTop="98dp"
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="10dp"
-            android:gravity="center_vertical|center_horizontal"
             android:background="@color/black"
+            android:gravity="center_vertical|center_horizontal"
             android:text="@string/title"
             android:textColor="@color/white"
             android:textSize="20sp"
