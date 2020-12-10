@@ -4,7 +4,6 @@ const { describe, it, expect } = require('@jest/globals');
 const { calcTotalPrice } = require('../../../../api/cart/services/cart');
 
 describe('calc total price', () => {
-
   let products = [
     {
       price: 10,
@@ -47,4 +46,3 @@ describe('calc total price', () => {
     expect(total).toBe(12);
   })
 });
-

@@ -9,4 +9,5 @@
     <string name="description">Description</string>
     <string name="image">image</string>
     <string name="_000000">000000€</string>
+    <string name="add_article_with_qrcode">Add article with QRCODE</string>
 </resources>
