@@ -22,10 +22,12 @@ services:
     networks:
       - strapi-app-network
 
-#  mobile:
-#    build: Mobile
-#    volumes:
-#      - ./data/:/srv/app/mobile:z
+  mobile:
+    build: Mobile
+    volumes:
+      - ./data/:/srv/app/mobile:z
+    networks:
+      - mobile-app-network
 
   postgres:
     image: postgres
@@ -40,6 +42,8 @@ services:
 
 networks:
   strapi-app-network:
+    driver: bridge
+  mobile-app-network:
     driver: bridge
 
 volumes:
