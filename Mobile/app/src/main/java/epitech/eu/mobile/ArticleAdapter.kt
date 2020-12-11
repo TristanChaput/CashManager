@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleAdapter(private val articleList: List<Article>, private val listener: OnArticleClickListener) :
+class ArticleAdapter(private val articleList: ArrayList<Article>, private val listener: ArticleListener) :
     RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
@@ -38,12 +38,16 @@ class ArticleAdapter(private val articleList: List<Article>, private val listene
         override fun onClick(v: View?) {
             val position = adapterPosition
             if(position != RecyclerView.NO_POSITION) {
-                listener.onArticleClick(position)
+                listener.articleEvent(ListenerType.OnArticleClickListener(position))
             }
         }
     }
 
-    interface OnArticleClickListener{
-        fun onArticleClick(position: Int)
+    sealed class ListenerType {
+        class OnArticleClickListener(val position: Int): ListenerType()
+    }
+
+    interface ArticleListener{
+        fun articleEvent(clicked: ListenerType)
     }
 }
