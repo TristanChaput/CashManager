@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleActivity : AppCompatActivity(), ArticleAdapter.ArticleListener {
+class ArticleActivity : AppCompatActivity(), ArticleListener {
     private val articleList = generateArticleList()
     private val TAG: String = ArticleActivity::class.java.simpleName
 
@@ -40,9 +40,9 @@ class ArticleActivity : AppCompatActivity(), ArticleAdapter.ArticleListener {
         return listArticle
     }
 
-    override fun articleEvent(clicked: ArticleAdapter.ListenerType) {
+    override fun articleEvent(clicked: ListenerType) {
         when (clicked) {
-            is ArticleAdapter.ListenerType.OnArticleClickListener -> {
+            is ListenerType.OnArticleClickListener -> {
                 Toast.makeText(
                     this,
                     "Article n°" + (clicked.position + 1) + " clicked",
