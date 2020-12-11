@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             /*val userName = etUserName.text;
             val password = etPassword.text;
 
-            val url = "http://192.168.1.49:8080/auth/local"
+            val url = "http://192.168.1.80:8080/auth/local"
 
             val JSON = "application/json; charset=utf-8".toMediaType()
             val json = "{\"identifier\": \"$userName\", \"password\": \"$password\"}"
@@ -47,6 +47,13 @@ class MainActivity : AppCompatActivity() {
             client.newCall(request).enqueue(object : Callback {
                 override fun onFailure(call: Call, e: IOException) {
                     println("Failed to execute request : $e")
+                    this@MainActivity.runOnUiThread(Runnable {
+                        Toast.makeText(
+                                this@MainActivity,
+                                "Authentification failed",
+                                Toast.LENGTH_SHORT
+                        ).show()
+                    })
                 }
 
                 override fun onResponse(call: Call, response: okhttp3.Response) {

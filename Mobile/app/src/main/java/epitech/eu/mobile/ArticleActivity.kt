@@ -55,4 +55,6 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
             }
         }
     }
+
+    fun insertArticle(view: View) {}
 }
