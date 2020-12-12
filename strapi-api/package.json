@@ -50,8 +50,9 @@
     "supertest": "^6.0.1"
   },
   "dependencies": {
-    "knex": "^0.21.12",
+    "knex": "^0.21.13",
     "pg": "^8.5.1",
+    "pg-connection-string": "^2.4.0",
     "strapi": "3.3.4",
     "strapi-admin": "3.3.4",
     "strapi-connector-bookshelf": "3.3.4",

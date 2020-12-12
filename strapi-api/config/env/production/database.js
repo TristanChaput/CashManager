@@ -8,11 +8,11 @@ module.exports = () => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        host: 'ec2-34-200-181-5.compute-1.amazonaws.com',
-        port: 5432,
-        database: 'd1cf1drgl2rbto',
-        username: 'lpqfoapqznimjq',
-        password: '914088cd6ff583e12033e8481b664859b1ba4d04f9a28c9de843e0b2754c66ba',
+        host: config.host,
+        port: config.port,
+        database: config.database,
+        username: config.user,
+        password: config.password,
       },
       options: {
         ssl: true,
@@ -20,7 +20,8 @@ module.exports = () => ({
       dialectOptions: {
         ssl: {
           require: true,
-          rejectUnauthorized: true,
+          // Ref.: https://github.com/brianc/node-postgres/issues/2009
+          rejectUnauthorized: false,
         },
         keepAlive: true,
       },
