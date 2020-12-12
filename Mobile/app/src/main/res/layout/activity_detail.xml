@@ -19,6 +19,18 @@
         android:contentDescription="@string/image" />
 
     <TextView
+        android:id="@+id/textViewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="0"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewPrice"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -66,20 +78,49 @@
         android:layout_height="60dp"
         android:text="@string/add_to_cart"
         android:backgroundTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/textViewBill"
+        app:layout_constraintBottom_toTopOf="@+id/buttonPanel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewBill"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
         android:background="@color/black"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/_000000"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/black"
+            android:gravity="center_horizontal"
+            android:text="◄"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textViewTotal"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:gravity="center_vertical|end"
+            android:text="Total : "
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewBill"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/black"
+            android:gravity="start|center_vertical"
+            android:text="@string/_000000"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
