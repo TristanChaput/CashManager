@@ -20,11 +20,6 @@
       "type": "decimal",
       "required": true,
       "min": 0
-    },
-    "user": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "account"
     }
   }
 }

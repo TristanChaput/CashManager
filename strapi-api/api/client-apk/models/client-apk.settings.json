@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "client_apks",
+  "info": {
+    "name": "client.apk"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "apk": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

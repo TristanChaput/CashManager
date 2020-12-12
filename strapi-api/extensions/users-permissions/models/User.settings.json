@@ -59,17 +59,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "account": {
-      "via": "user",
-      "model": "account"
-    },
     "cart": {
-      "via": "user",
-      "model": "cart"
-    },
-    "products": {
-      "via": "users",
-      "collection": "product"
+      "model": "cart",
+      "via": "user"
     }
   }
 }
