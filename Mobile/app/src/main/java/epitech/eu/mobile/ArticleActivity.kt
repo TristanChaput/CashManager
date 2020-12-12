@@ -21,6 +21,11 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles)
 
+
+        val token = intent.getStringExtra("token")
+        val network = intent.getStringExtra("network")
+
+        println(intent.getStringExtra("network"))
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
         recyclerView.adapter = ArticleAdapter(articleList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)

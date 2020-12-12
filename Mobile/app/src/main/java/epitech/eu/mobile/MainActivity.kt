@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
             val password = etPassword.text;
             val networkLocation = etNetworkLocation.text;
 
-            val url = "http://192.168.1.80:8080/auth/local"
+            val url = "$networkLocation/auth/local"
 
             val JSON = "application/json; charset=utf-8".toMediaType()
             val json = "{\"identifier\": \"$userName\", \"password\": \"$password\"}"
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                     val gson = GsonBuilder().create()
 
                     val tmp = gson.fromJson(body, Response::class.java)
-                    if (tmp.jwt == null) {
+                    if (tmp == null) {
                         this@MainActivity.runOnUiThread(Runnable {
                             Toast.makeText(
                                 this@MainActivity,
@@ -82,6 +82,8 @@ class MainActivity : AppCompatActivity() {
 
                     } else {
                         val intent = Intent(this@MainActivity, ArticleActivity::class.java)
+                        intent.putExtra("token",tmp.jwt);
+                        intent.putExtra("network", networkLocation);
                         startActivity(intent)
                     }
                 }
