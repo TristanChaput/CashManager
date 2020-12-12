@@ -21,17 +21,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/black"
         android:orientation="vertical">
-
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:background="@color/black"
             android:gravity="center_horizontal|center_vertical"
             android:text="@string/_000000"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:background="@color/primary"/>
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 </RelativeLayout>

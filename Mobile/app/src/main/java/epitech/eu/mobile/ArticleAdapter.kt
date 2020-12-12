@@ -42,12 +42,4 @@ class ArticleAdapter(private val articleList: ArrayList<Article>, private val li
             }
         }
     }
-
-    sealed class ListenerType {
-        class OnArticleClickListener(val position: Int): ListenerType()
-    }
-
-    interface ArticleListener{
-        fun articleEvent(clicked: ListenerType)
-    }
 }

@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="insertArticle"
-            android:text="@string/add_article_with_qrcode" />
+            android:text="@string/add_article_with_qrcode"
+            />
 
     </LinearLayout>
 </RelativeLayout>
