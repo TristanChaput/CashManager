@@ -2,8 +2,6 @@ package epitech.eu.mobile
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ArticleActivity : AppCompatActivity(), ArticleListener {
     private val articleList = generateArticleList()
-    private val TAG: String = ArticleActivity::class.java.simpleName
 
     companion object {
         const val INTENT_PARCELABLE = "OBJECT_INTENT"
@@ -31,11 +28,11 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
         val listArticle = ArrayList<Article>()
 
         //A COMPLETER AVEC L'API
-        listArticle.add(Article(R.drawable.croisiere, "Croisiere maldives", "", 4999.99))
-        listArticle.add(Article(R.drawable.croisiere, "Croisiere costa rica", "", 6299.99))
-        listArticle.add(Article(R.drawable.croisiere, "Croisiere iles canaries", "", 3999.99))
-        listArticle.add(Article(R.drawable.croisiere, "Croisiere grece", "", 7899.99))
-        listArticle.add(Article(R.drawable.croisiere,"Croisiere grece bis","une description",7899.99))
+        listArticle.add(Article(R.drawable.croisiere, "Croisiere maldives", "", 4999.99, 0))
+        listArticle.add(Article(R.drawable.croisiere, "Croisiere costa rica", "", 6299.99, 0))
+        listArticle.add(Article(R.drawable.croisiere, "Croisiere iles canaries", "", 3999.99, 0))
+        listArticle.add(Article(R.drawable.croisiere, "Croisiere grece", "", 7899.99, 0))
+        listArticle.add(Article(R.drawable.croisiere,"Croisiere grece bis","une description",7899.99, 0))
 
         return listArticle
     }
@@ -45,7 +42,7 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
             is ListenerType.OnArticleClickListener -> {
                 Toast.makeText(
                     this,
-                    "Article n°" + (clicked.position + 1) + " clicked",
+                    "Product n°" + (clicked.position + 1) + " clicked",
                     Toast.LENGTH_SHORT
                 )
                     .show()
@@ -55,6 +52,4 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
             }
         }
     }
-
-    fun insertArticle(view: View) {}
 }

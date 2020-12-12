@@ -14,7 +14,8 @@
         android:theme="@style/Theme.Mobile"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".DetailActivity"></activity>
+        <activity android:name=".Cart"></activity>
+        <activity android:name=".DetailActivity" />
         <activity android:name=".ArticleActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
