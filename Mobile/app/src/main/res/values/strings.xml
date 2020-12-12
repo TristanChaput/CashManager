@@ -2,6 +2,7 @@
     <string name="app_name">CA$H MANAGER</string>
     <string name="login">Login</string>
     <string name="user_name">Username</string>
+    <string name="network_location">Network Location</string>
     <string name="password">Password</string>
     <string name="submit">Login</string>
     <string name="cash_manager">CA$H MANAGER</string>
