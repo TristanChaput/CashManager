@@ -51,17 +51,16 @@
   },
   "dependencies": {
     "knex": "^0.21.13",
-    "pg": "^8.5.1",
-    "pg-connection-string": "^2.4.0",
     "strapi": "3.3.4",
     "strapi-admin": "3.3.4",
-    "strapi-connector-bookshelf": "3.3.4",
+    "strapi-connector-mongoose": "^3.3.4",
     "strapi-plugin-content-manager": "3.3.4",
     "strapi-plugin-content-type-builder": "3.3.4",
     "strapi-plugin-documentation": "3.3.4",
     "strapi-plugin-email": "3.3.4",
     "strapi-plugin-upload": "3.3.4",
     "strapi-plugin-users-permissions": "3.3.4",
+    "strapi-provider-upload-cloudinary": "^3.3.4",
     "strapi-utils": "3.3.4"
   },
   "author": {

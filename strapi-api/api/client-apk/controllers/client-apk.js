@@ -6,7 +6,11 @@
  */
 
 module.exports = {
-  async find (ctx) {
-    console.log('hello world');
+  async download(ctx) {
+    const file = await strapi.query('client-apk').find();
+
+    if (file) {
+      ctx.redirect(file[0].apk.url);
+    }
   }
 };

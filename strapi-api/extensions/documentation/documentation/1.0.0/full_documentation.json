@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "12/12/2020 3:14:39 PM"
+    "x-generation-date": "12/12/2020 7:30:51 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1334,6 +1334,63 @@
         "tags": [
           "Client-apk"
         ],
+        "parameters": []
+      }
+    },
+    "/client-apk": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the client-apk's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve client-apk document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Client-apk"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -1472,9 +1529,7 @@
             "deprecated": false
           }
         ]
-      }
-    },
-    "/client-apk": {
+      },
       "put": {
         "deprecated": false,
         "description": "Update a single client-apk record",
@@ -4221,63 +4276,6 @@
           },
           "amount": {
             "type": "number"
-          },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "account": {
-                "type": "string"
-              },
-              "cart": {
-                "type": "string"
-              },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
           }
         }
       },
@@ -4292,9 +4290,6 @@
           },
           "amount": {
             "type": "number"
-          },
-          "user": {
-            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -4349,17 +4344,8 @@
               "role": {
                 "type": "string"
               },
-              "account": {
-                "type": "string"
-              },
               "cart": {
                 "type": "string"
-              },
-              "products": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               },
               "created_by": {
                 "type": "string"
@@ -4396,19 +4382,10 @@
                 "slug": {
                   "type": "uid"
                 },
-                "quantity": {
-                  "type": "integer"
-                },
                 "price": {
                   "type": "number"
                 },
                 "carts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "users": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -4631,9 +4608,6 @@
           "slug": {
             "type": "uid"
           },
-          "quantity": {
-            "type": "integer"
-          },
           "price": {
             "type": "number"
           },
@@ -4668,66 +4642,6 @@
               }
             }
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "account": {
-                  "type": "string"
-                },
-                "cart": {
-                  "type": "string"
-                },
-                "products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4751,19 +4665,10 @@
           "slug": {
             "type": "uid"
           },
-          "quantity": {
-            "type": "integer"
-          },
           "price": {
             "type": "number"
           },
           "carts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "users": {
             "type": "array",
             "items": {
               "type": "string"
@@ -4880,17 +4785,8 @@
                 "role": {
                   "type": "string"
                 },
-                "account": {
-                  "type": "string"
-                },
                 "cart": {
                   "type": "string"
-                },
-                "products": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "created_by": {
                   "type": "string"
@@ -5005,33 +4901,6 @@
               }
             }
           },
-          "account": {
-            "required": [
-              "id",
-              "number",
-              "amount"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
-                "type": "integer"
-              },
-              "amount": {
-                "type": "number"
-              },
-              "user": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "cart": {
             "required": [
               "id"
@@ -5057,63 +4926,6 @@
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "description",
-                "image",
-                "slug",
-                "price"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "carts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
               }
             }
           }
@@ -5158,17 +4970,8 @@
           "role": {
             "type": "string"
           },
-          "account": {
-            "type": "string"
-          },
           "cart": {
             "type": "string"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"

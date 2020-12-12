@@ -7,17 +7,17 @@
 
 module.exports = {
   async pay(ctx) {
-    const { number, total } = ctx.request.body;
+    const { number, amount } = ctx.request.body;
 
     const account = await strapi.services.account.findOne({ number });
 
     if (account) {
-      if (account.amount < total) {
+      if (account.amount < amount) {
         return ctx.badRequest('You don\'t have enough money !');
       }
 
-      await strapi.services.account.update(account.id, {
-        amount: account.amount - total,
+      await strapi.services.account.update({ _id: account._id }, {
+        amount: account.amount - amount,
       });
 
       return {

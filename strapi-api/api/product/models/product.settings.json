@@ -35,10 +35,6 @@
       "targetField": "name",
       "required": true
     },
-    "quantity": {
-      "type": "biginteger",
-      "min": "0"
-    },
     "price": {
       "type": "decimal",
       "required": true
@@ -46,12 +42,6 @@
     "carts": {
       "collection": "cart",
       "via": "products"
-    },
-    "users": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "products",
-      "dominant": true
     }
   }
 }

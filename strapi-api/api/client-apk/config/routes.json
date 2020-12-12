@@ -3,6 +3,11 @@
     {
       "method": "GET",
       "path": "/client.apk",
+      "handler": "client-apk.download"
+    },
+    {
+      "method": "GET",
+      "path": "/client-apk",
       "handler": "client-apk.find"
     },
     {

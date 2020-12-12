@@ -54,6 +54,63 @@
         "tags": [
           "Client-apk"
         ],
+        "parameters": []
+      }
+    },
+    "/client-apk": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the client-apk's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve client-apk document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Client-apk"
+        ],
         "parameters": [
           {
             "name": "_limit",
@@ -192,9 +249,7 @@
             "deprecated": false
           }
         ]
-      }
-    },
-    "/client-apk": {
+      },
       "put": {
         "deprecated": false,
         "description": "Update a single client-apk record",
