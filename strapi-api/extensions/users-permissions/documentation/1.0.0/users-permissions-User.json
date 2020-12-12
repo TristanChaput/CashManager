@@ -1251,33 +1251,6 @@
               }
             }
           },
-          "account": {
-            "required": [
-              "id",
-              "number",
-              "amount"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "number": {
-                "type": "integer"
-              },
-              "amount": {
-                "type": "number"
-              },
-              "user": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
           "cart": {
             "required": [
               "id"
@@ -1303,63 +1276,6 @@
               },
               "updated_by": {
                 "type": "string"
-              }
-            }
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "description",
-                "image",
-                "slug",
-                "price"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "quantity": {
-                  "type": "integer"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "carts": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
               }
             }
           }
@@ -1404,17 +1320,8 @@
           "role": {
             "type": "string"
           },
-          "account": {
-            "type": "string"
-          },
           "cart": {
             "type": "string"
-          },
-          "products": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
