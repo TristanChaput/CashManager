@@ -2,6 +2,7 @@ plugins {
     id "com.android.application"
     id "kotlin-android"
     id "kotlin-android-extensions"
+    id "org.jetbrains.dokka-android"
 }
 
 android {
@@ -17,6 +18,11 @@ android {
 
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dokka{
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/javadoc)"
     }
 
     buildTypes {
