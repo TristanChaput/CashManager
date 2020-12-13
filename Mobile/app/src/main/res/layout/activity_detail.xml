@@ -110,7 +110,7 @@
 
         <TextView
             android:id="@+id/textViewTotal"
-            android:layout_width="125dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@color/black"
             android:gravity="center_vertical|end"

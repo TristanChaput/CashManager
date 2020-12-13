@@ -8,4 +8,5 @@ sealed class ListenerType {
     object AddOnClickButtonListener : ListenerType()
     object BackToArticlesOnClickButtonListener : ListenerType()
     object CartOnClickButtonListener: ListenerType()
+    object PaymentOnClickButtonListener: ListenerType()
 }
