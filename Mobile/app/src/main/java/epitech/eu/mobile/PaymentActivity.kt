@@ -33,13 +33,15 @@ class PaymentActivity : AppCompatActivity() {
 
         token = intent.getStringExtra("token").toString()
         network = intent.getStringExtra("network").toString()
-        amount = intent.getStringExtra("amount").toString()
+        amount = intent.getStringExtra("amount").toString().dropLast(1)
         paymentUpdate = findViewById(R.id.payment_update)
         backMenuButton = findViewById(R.id.back_menu_button)
         //total = findViewById(R.id.total)
 
         backMenuButton.setOnClickListener {
             val intent = Intent(this@PaymentActivity, ArticleActivity::class.java)
+            intent.putExtra("token",token)
+            intent.putExtra("network", network)
             startActivity(intent)
         }
 
@@ -49,6 +51,9 @@ class PaymentActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * QR Code scanner function
+     */
     private fun scanQRCode(){
         val integrator = IntentIntegrator(this).apply {
             captureActivity = CaptureActivity::class.java
@@ -59,7 +64,9 @@ class PaymentActivity : AppCompatActivity() {
         integrator.initiateScan()
     }
 
-    // Get the results:
+    /**
+     * Catch QR Code scanner result
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
         if (result != null) {
@@ -70,14 +77,9 @@ class PaymentActivity : AppCompatActivity() {
         }
     }
 
-    fun View.toggleVisibility() {
-        if (visibility == View.VISIBLE) {
-            visibility = View.INVISIBLE
-        } else {
-            visibility = View.VISIBLE
-        }
-    }
-
+    /**
+     * Payment function, calling api to check is payment is possible and displaying the payment update (pending, accepted, refused)
+     */
     private fun makePayment(account: String) {
         val url = "$network/accounts/pay"
 

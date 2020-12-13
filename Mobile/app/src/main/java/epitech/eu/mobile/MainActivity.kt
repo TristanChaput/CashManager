@@ -7,8 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.GsonBuilder
-import com.google.zxing.integration.android.IntentIntegrator
-import com.journeyapps.barcodescanner.CaptureActivity
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -21,6 +19,9 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
     lateinit var networkLocation: String
 
+    /**
+     * Get the authentication form data and call api to authenticate the terminal.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -34,15 +35,15 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btnSubmit.setOnClickListener {
-            val userName = etUserName.text;
-            val password = etPassword.text;
-            networkLocation = etNetworkLocation.text.toString();
+            val userName = etUserName.text
+            val password = etPassword.text
+            networkLocation = etNetworkLocation.text.toString()
 
             val url = "$networkLocation/auth/local"
 
-            val JSON = "application/json; charset=utf-8".toMediaType()
+            val jSON = "application/json; charset=utf-8".toMediaType()
             val json = "{\"identifier\": \"$userName\", \"password\": \"$password\"}"
-            val body = json.toRequestBody(JSON)
+            val body = json.toRequestBody(jSON)
             val request = Request.Builder().method("POST", body).header(
                 "Content-Type",
                 "application/json"
@@ -62,6 +63,9 @@ class MainActivity : AppCompatActivity() {
                     })
                 }
 
+                /**
+                 * Handle api response. On success start the terminal shop process.
+                 */
                 override fun onResponse(call: Call, response: okhttp3.Response) {
                     val body = response.body?.string()
 
@@ -89,4 +93,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Class for the api call Response. Stock the jwt token after authentication that will be useful for other api calls.
+ */
 class Response(val jwt: String)
