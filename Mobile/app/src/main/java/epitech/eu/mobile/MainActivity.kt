@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btnSubmit.setOnClickListener {
-            /*val userName = etUserName.text;
+            val userName = etUserName.text;
             val password = etPassword.text;
             networkLocation = etNetworkLocation.text.toString();
 
@@ -84,36 +84,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
-<<<<<<< HEAD
-            })*/
-            val intent = Intent(this@MainActivity, ArticleActivity::class.java)
-            startActivity(intent)
-        }
-    }
-
-    private fun scanQRCode(){
-        val integrator = IntentIntegrator(this).apply {
-            captureActivity = CaptureActivity::class.java
-            setOrientationLocked(false)
-            setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
-            setPrompt("")
-        }
-        integrator.initiateScan()
-    }
-
-    // Get the results:
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        val result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-        if (result != null) {
-            if (result.contents == null) Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show()
-            else Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
-=======
-            })/*
-            val intent = Intent(this@MainActivity, PaymentActivity::class.java)
-            startActivity(intent)*/
->>>>>>> ee7ba8107b6ad159c9142276d6f2215e50c7cc63
+            })
         }
     }
 }

@@ -1,12 +1,24 @@
+
 package epitech.eu.mobile
 
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Build
 import android.os.Bundle
+import android.os.FileUtils.copy
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import androidx.fragment.app.FragmentActivity
+import java.io.*
+import java.net.URL
+
 
 class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private lateinit var textViewCount: TextView
