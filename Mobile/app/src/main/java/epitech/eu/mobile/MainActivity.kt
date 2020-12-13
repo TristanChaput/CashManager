@@ -21,6 +21,9 @@ import java.io.IOException
 class MainActivity : AppCompatActivity() {
     lateinit var networkLocation: String
 
+    /**
+     * Get the authentication form data and call api to authenticate the terminal.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -62,6 +65,9 @@ class MainActivity : AppCompatActivity() {
                     })
                 }
 
+                /**
+                 * Handle api response. On success start the terminal shop process.
+                 */
                 override fun onResponse(call: Call, response: okhttp3.Response) {
                     val body = response.body?.string()
 
@@ -89,4 +95,7 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+/**
+ * Class for the api call Response. Stock the jwt token after authentication that will be useful for other api calls.
+ */
 class Response(val jwt: String)
