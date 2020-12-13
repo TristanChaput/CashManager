@@ -10,8 +10,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
 
-
-
 class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private lateinit var textViewCount: TextView
     private lateinit var textViewBill: TextView

@@ -26,7 +26,6 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
     private lateinit var network: String
     private lateinit var token: String
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles)

@@ -1,15 +1,12 @@
 package epitech.eu.mobile
 
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import java.net.URI
 
 class ArticleAdapter(private val articleList: ArrayList<Article>, private val listener: ArticleListener) :
     RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
