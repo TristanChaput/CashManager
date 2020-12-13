@@ -36,17 +36,6 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         token = intent.getStringExtra("token").toString()
         network = intent.getStringExtra("network").toString()
         articleList = generateArticleList()
-
-        /*val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
-        val buttonCart = findViewById<Button>(R.id.buttonCart)
-        buttonCart.setOnClickListener(this)
-        textViewBill = findViewById(R.id.textViewBill)
-        recyclerView.adapter = ArticleAdapter(articleList, this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.setHasFixedSize(true)
-        if (intent.getParcelableArrayListExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
-            cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
-        textViewBill.text = Tools.computeBill(cartList)*/
     }
 
     private fun generateArticleList(): ArrayList<Article> {
@@ -79,10 +68,8 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
                 val productsList = gson.fromJson<List<ProductsResponse>>(body, productsListType)
                 if (productsList != null) {
                     for ((index, value) in productsList.withIndex()) {
-                        println("the element at $index is $value")
-                        //val imagetmp = value.image
-                        //val url = imagetmp.url
-                        listArticle.add(Article("$index", R.drawable.croisiere, value.name, value.description, value.price.toDouble()))
+                        println("the element at $index is $value" + value.image)
+                        listArticle.add(Article("$index", value.image.url, value.name, value.description, value.price.toDouble()))
                     }
                     val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
                     val buttonCart = findViewById<Button>(R.id.buttonCart)

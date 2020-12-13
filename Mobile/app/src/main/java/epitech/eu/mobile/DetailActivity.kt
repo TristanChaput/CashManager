@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.fragment.app.FragmentActivity
+import com.squareup.picasso.Picasso
 import java.io.*
 import java.net.URL
 
@@ -46,7 +47,7 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
         textViewBill.text = Tools.computeBill(cartList)
 
 
-        imageView.setImageResource(article.img)
+        Picasso.get().load(article.img).into(imageView);
         textViewName.text = article.name
         textViewPrice.text = article.prix.toString().plus("€")
         textViewDescription.text = article.description
