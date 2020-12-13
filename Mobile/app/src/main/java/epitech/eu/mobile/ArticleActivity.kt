@@ -22,7 +22,6 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
         val token = intent.getStringExtra("token")
         val network = intent.getStringExtra("network")
 
-        println(intent.getStringExtra("network"))
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
         recyclerView.adapter = ArticleAdapter(articleList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
