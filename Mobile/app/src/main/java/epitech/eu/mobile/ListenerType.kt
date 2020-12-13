@@ -6,6 +6,6 @@ import android.widget.TextView
 sealed class ListenerType {
     class OnArticleClickListener(val position: Int) : ListenerType()
     object AddOnClickButtonListener : ListenerType()
-    object UpdateBillOnClickButtonListener : ListenerType()
     object BackToArticlesOnClickButtonListener : ListenerType()
+    object CartOnClickButtonListener: ListenerType()
 }

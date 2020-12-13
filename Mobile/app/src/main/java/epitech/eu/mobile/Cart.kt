@@ -1,11 +1,21 @@
 package epitech.eu.mobile
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+class Cart: ArrayList<Article>() {
 
-class Cart : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cart)
+    fun computeBill(): String {
+        var bill = 0.00
+        if (!this.isNullOrEmpty())
+            for (anArticle in this)
+                bill += anArticle.prix
+        return Tools.roundInEuro(bill)
+    }
+
+    fun countItemInCart(currentArticle: Article): String{
+        var countItem = 0
+        if (!this.isNullOrEmpty())
+            for (anArticle in this)
+                if (currentArticle.id == anArticle.id)
+                    countItem++
+        return if (countItem > 1) "$countItem items" else "$countItem item"
     }
 }

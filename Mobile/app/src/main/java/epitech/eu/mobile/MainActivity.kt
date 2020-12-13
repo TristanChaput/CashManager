@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         // set on-click listener
         btnSubmit.setOnClickListener {
-            val userName = etUserName.text;
+            /*val userName = etUserName.text;
             val password = etPassword.text;
             val networkLocation = etNetworkLocation.text;
 
@@ -87,9 +87,9 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
-            })
-            //val intent = Intent(this@MainActivity, ArticleActivity::class.java)
-            //startActivity(intent)
+            })*/
+            val intent = Intent(this@MainActivity, ArticleActivity::class.java)
+            startActivity(intent)
         }
     }
 

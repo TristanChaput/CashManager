@@ -7,12 +7,12 @@ class Tools {
     companion object {
         const val INTENT_PARCELABLE = "OBJECT_INTENT"
         const val ARRAY_INTENT_PARCELABLE = "ARRAY_INTENT"
-        const val BILL_INTENT_PARCELABLE = "BILL_INTENT"
 
         fun roundInEuro(nbDouble: Double): String {
-            val df = DecimalFormat("#.###")
+            val df = DecimalFormat("#.##")
             df.roundingMode = RoundingMode.CEILING
             return df.format(nbDouble).plus("€")
         }
+
     }
 }

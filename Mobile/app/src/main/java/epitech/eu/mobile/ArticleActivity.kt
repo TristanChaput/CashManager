@@ -3,17 +3,18 @@ package epitech.eu.mobile
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ArticleActivity : AppCompatActivity(), ArticleListener {
+class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private val articleList = generateArticleList()
-    private var cartList = ArrayList<Article>()
+    private var cartList = Cart()
     private lateinit var textViewBill: TextView
-    private var bill = 0.00
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,18 +25,19 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
 
         println(intent.getStringExtra("network"))
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
+        val buttonCart = findViewById<Button>(R.id.buttonCart)
+        buttonCart.setOnClickListener(this)
         textViewBill = findViewById(R.id.textView)
+        textViewBill.text = cartList.computeBill()
         recyclerView.adapter = ArticleAdapter(articleList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-        if (intent.getParcelableArrayListExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
-            cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
-        bill = intent.getDoubleExtra(Tools.BILL_INTENT_PARCELABLE, 0.00)
-        this.articleEvent(ListenerType.UpdateBillOnClickButtonListener)
+        if (intent.getParcelableExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
+            cartList = intent.getParcelableExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
     }
 
     private fun generateArticleList(): ArrayList<Article> {
-        val listArticle = ArrayList<Article>()
+        val listArticle = Cart()
 
         //A COMPLETER AVEC L'API
         listArticle.add(Article("1", R.drawable.croisiere, "Croisiere maldives", "", 4999.99))
@@ -52,12 +54,23 @@ class ArticleActivity : AppCompatActivity(), ArticleListener {
             is ListenerType.OnArticleClickListener -> {
                 val intent = Intent(this, DetailActivity::class.java)
                 intent.putExtra(Tools.INTENT_PARCELABLE, articleList[clicked.position])
-                intent.putExtra(Tools.BILL_INTENT_PARCELABLE, bill)
-                intent.putParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
                 startActivity(intent)
             }
-            is ListenerType.UpdateBillOnClickButtonListener -> textViewBill.text = Tools.roundInEuro(bill)
+            is ListenerType.CartOnClickButtonListener -> {
+                val intent = Intent(this, CartActivity::class.java)
+                intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                startActivity(intent)
+            }
             else -> {}
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v!!.id) {
+            R.id.buttonCart -> {
+                this.articleEvent(ListenerType.CartOnClickButtonListener)
+            }
         }
     }
 }

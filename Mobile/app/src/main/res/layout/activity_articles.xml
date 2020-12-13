@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ArticleActivity">
@@ -11,27 +12,46 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="4dp"
-        android:layout_above="@id/text"
+        android:layout_above="@id/buttonPanel"
         tools:listitem="@layout/article_item" />
 
     <LinearLayout
-        android:id="@+id/text"
-        android:padding="4dp"
-        android:clipToPadding="true"
+        android:id="@+id/buttonPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@color/black"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/buttonCart"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/black"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Cart"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewTotal"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:gravity="center_vertical|end"
+            android:text="Total : "
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewBill"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/black"
-            android:gravity="center_horizontal|center_vertical"
+            android:gravity="start|center_vertical"
             android:text="@string/_000000"
             android:textColor="@color/white"
             android:textStyle="bold" />
+
+
     </LinearLayout>
 </RelativeLayout>
