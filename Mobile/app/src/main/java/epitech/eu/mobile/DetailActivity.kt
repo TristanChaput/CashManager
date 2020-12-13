@@ -12,16 +12,14 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
     private lateinit var textViewCount: TextView
     private lateinit var textViewBill: TextView
     private lateinit var article: Article
-    private lateinit var cartList: Cart
+    private lateinit var cartList: ArrayList<Article>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        article = intent.getParcelableExtra(Tools.INTENT_PARCELABLE)!!
-        cartList = intent.getParcelableExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
         val imageView = findViewById<ImageView>(R.id.imageView)
-        val textViewName = findViewById<TextView>(R.id.textViewTitle)
+        val textViewName = findViewById<TextView>(R.id.textViewName)
         val textViewPrice = findViewById<TextView>(R.id.textViewPrice)
         val textViewDescription = findViewById<TextView>(R.id.textViewDescription)
         val buttonAdd = findViewById<Button>(R.id.buttonAddToCart)
@@ -30,12 +28,17 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
         textViewBill = findViewById(R.id.textViewBill)
         textViewCount = findViewById(R.id.textViewCount)
 
+        article = intent.getParcelableExtra(Tools.INTENT_PARCELABLE)!!
+        cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
+        textViewCount.text = Tools.countItemInCart(cartList, article)
+        textViewBill.text = Tools.computeBill(cartList)
+
+
         imageView.setImageResource(article.img)
         textViewName.text = article.name
         textViewPrice.text = article.prix.toString().plus("€")
         textViewDescription.text = article.description
-        textViewCount.text = cartList.countItemInCart(article)
-        textViewBill.text = cartList.computeBill()
+
         buttonAdd.setOnClickListener(this)
         buttonBack.setOnClickListener(this)
         buttonCart.setOnClickListener(this)
@@ -45,8 +48,8 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
         when (clicked) {
             is ListenerType.AddOnClickButtonListener -> {
                 cartList.add(article)
-                textViewCount.text = cartList.countItemInCart(article)
-                textViewBill.text = cartList.computeBill()
+                textViewCount.text = Tools.countItemInCart(cartList, article)
+                textViewBill.text = Tools.computeBill(cartList)
             }
             is ListenerType.BackToArticlesOnClickButtonListener -> {
                 val intent = Intent(this, ArticleActivity::class.java)
@@ -58,7 +61,8 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
                 startActivity(intent)
             }
-            else -> {}
+            else -> {
+            }
         }
     }
 

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private val articleList = generateArticleList()
-    private var cartList = Cart()
+    private var cartList = ArrayList<Article>()
     private lateinit var textViewBill: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,17 +26,17 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
         val buttonCart = findViewById<Button>(R.id.buttonCart)
         buttonCart.setOnClickListener(this)
-        textViewBill = findViewById(R.id.textView)
-        textViewBill.text = cartList.computeBill()
+        textViewBill = findViewById(R.id.textViewBill)
         recyclerView.adapter = ArticleAdapter(articleList, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
-        if (intent.getParcelableExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
-            cartList = intent.getParcelableExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
+        if (intent.getParcelableArrayListExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
+            cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
+        textViewBill.text = Tools.computeBill(cartList)
     }
 
     private fun generateArticleList(): ArrayList<Article> {
-        val listArticle = Cart()
+        val listArticle = ArrayList<Article>()
 
         //A COMPLETER AVEC L'API
         listArticle.add(Article("1", R.drawable.croisiere, "Croisiere maldives", "", 4999.99))

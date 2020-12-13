@@ -28,7 +28,7 @@ class ArticleAdapter(private val articleList: ArrayList<Article>, private val li
 
     inner class ArticleViewHolder(articleView: View) : RecyclerView.ViewHolder(articleView), View.OnClickListener{
         val imageView: ImageView = articleView.findViewById(R.id.image_view)
-        val textViewTitle: TextView = articleView.findViewById(R.id.TextViewTitle)
+        val textViewTitle: TextView = articleView.findViewById(R.id.TextViewName)
         val textViewPrice: TextView = articleView.findViewById(R.id.TextViewPrice)
 
         init {

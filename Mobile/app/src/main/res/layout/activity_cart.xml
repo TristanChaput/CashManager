@@ -50,15 +50,14 @@
             android:textColor="@color/white"
             android:textStyle="bold" />
 
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:backgroundTint="@color/black"
+            android:text="Payment"
+            android:textColor="@color/white" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/black"
-        android:text="Payment"
-        android:textColor="@color/white" />
 
 </ScrollView>
