@@ -1,9 +1,9 @@
 [
   {
-    "id": 1,
+    "_id": 1,
     "username": "monserver.com",
     "email": "jason@doe.fr",
-    "provider": "local",
+    "prov_ider": "local",
     "password": null,
     "resetPasswordToken": null,
     "confirmationToken": null,

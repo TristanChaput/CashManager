@@ -1,0 +1,30 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/client.apk",
+      "handler": "client-apk.download"
+    },
+    {
+      "method": "GET",
+      "path": "/client-apk",
+      "handler": "client-apk.find"
+    },
+    {
+      "method": "PUT",
+      "path": "/client-apk",
+      "handler": "client-apk.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/client-apk",
+      "handler": "client-apk.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

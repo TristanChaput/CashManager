@@ -3,10 +3,7 @@
     {
       "method": "POST",
       "path": "/accounts/pay",
-      "handler": "account.pay",
-      "config": {
-        "policies": []
-      }
+      "handler": "account.pay"
     },
     {
       "method": "GET",
