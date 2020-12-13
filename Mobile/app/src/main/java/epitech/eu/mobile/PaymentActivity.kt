@@ -25,6 +25,7 @@ class PaymentActivity : AppCompatActivity() {
     lateinit var amount: String
     lateinit var paymentUpdate: TextView
     lateinit var total: TextView
+    lateinit var backMenuButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +35,13 @@ class PaymentActivity : AppCompatActivity() {
         network = intent.getStringExtra("network").toString()
         amount = intent.getStringExtra("amount").toString()
         paymentUpdate = findViewById(R.id.payment_update)
+        backMenuButton = findViewById(R.id.back_menu_button)
         //total = findViewById(R.id.total)
+
+        backMenuButton.setOnClickListener {
+            val intent = Intent(this@PaymentActivity, ArticleActivity::class.java)
+            startActivity(intent)
+        }
 
         val btnQrCode = findViewById<ImageButton>(R.id.qrcode)
         btnQrCode.setOnClickListener {
@@ -120,12 +127,14 @@ class PaymentActivity : AppCompatActivity() {
     private fun successfulPayment() {
         this@PaymentActivity.runOnUiThread(Runnable {
             paymentUpdate.text = getString(R.string.paymentAccepted)
+            backMenuButton.visibility = View.VISIBLE
         })
     }
 
     private fun refusedPayment() {
         this@PaymentActivity.runOnUiThread(Runnable {
             paymentUpdate.text = getString(R.string.paymentRefused)
+            backMenuButton.visibility = View.VISIBLE
         })
     }
 }

@@ -119,12 +119,24 @@
                 android:id="@+id/payment_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="52dp"
-                android:layout_marginRight="52dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="152dp"
+                android:layout_marginRight="152dp"
                 android:text="@string/pendingAuthorization"
+                android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="@+id/imageButton5"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+                app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
+            <Button
+                android:id="@+id/back_menu_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="3dp"
+                android:text="@string/back_to_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:visibility="invisible"/>
 
 

@@ -1,11 +1,15 @@
 package epitech.eu.mobile
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+import java.net.URI
 
 class ArticleAdapter(private val articleList: ArrayList<Article>, private val listener: ArticleListener) :
     RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder>() {
@@ -19,7 +23,7 @@ class ArticleAdapter(private val articleList: ArrayList<Article>, private val li
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val currentArticle = articleList[position]
 
-        holder.imageView.setImageResource(currentArticle.img)
+        Picasso.get().load(currentArticle.img).into(holder.imageView);
         holder.textViewTitle.text = currentArticle.name
         holder.textViewPrice.text = currentArticle.prix.toString().plus("€")
     }
