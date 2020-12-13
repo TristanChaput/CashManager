@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CartActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private lateinit var cartList: ArrayList<Article>
+    private lateinit var network: String
+    private lateinit var token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
+        token = intent.getStringExtra("token").toString()
+        network = intent.getStringExtra("network").toString()
 
         cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
 
@@ -35,11 +40,15 @@ class CartActivity : AppCompatActivity(), ArticleListener, View.OnClickListener 
             is ListenerType.BackToArticlesOnClickButtonListener -> {
                 val intent = Intent(this, ArticleActivity::class.java)
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             is ListenerType.PaymentOnClickButtonListener -> {
                 val intent = Intent(this, PaymentActivity::class.java)
-                intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, Tools.computeBill(cartList))
+                intent.putExtra("amount", Tools.computeBill(cartList))
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             else -> {

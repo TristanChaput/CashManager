@@ -103,11 +103,15 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
                 val intent = Intent(this, DetailActivity::class.java)
                 intent.putExtra(Tools.INTENT_PARCELABLE, articleList[clicked.position])
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             is ListenerType.CartOnClickButtonListener -> {
                 val intent = Intent(this, CartActivity::class.java)
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             else -> {

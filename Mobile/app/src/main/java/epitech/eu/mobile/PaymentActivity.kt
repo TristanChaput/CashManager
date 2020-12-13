@@ -33,13 +33,15 @@ class PaymentActivity : AppCompatActivity() {
 
         token = intent.getStringExtra("token").toString()
         network = intent.getStringExtra("network").toString()
-        amount = intent.getStringExtra("amount").toString()
+        amount = intent.getStringExtra("amount").toString().dropLast(1)
         paymentUpdate = findViewById(R.id.payment_update)
         backMenuButton = findViewById(R.id.back_menu_button)
         //total = findViewById(R.id.total)
 
         backMenuButton.setOnClickListener {
             val intent = Intent(this@PaymentActivity, ArticleActivity::class.java)
+            intent.putExtra("token",token)
+            intent.putExtra("network", network)
             startActivity(intent)
         }
 

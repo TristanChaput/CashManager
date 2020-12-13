@@ -15,10 +15,15 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
     private lateinit var textViewBill: TextView
     private lateinit var article: Article
     private lateinit var cartList: ArrayList<Article>
+    private lateinit var network: String
+    private lateinit var token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        token = intent.getStringExtra("token").toString()
+        network = intent.getStringExtra("network").toString()
 
         val imageView = findViewById<ImageView>(R.id.imageView)
         val textViewName = findViewById<TextView>(R.id.textViewName)
@@ -55,11 +60,15 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
             is ListenerType.BackToArticlesOnClickButtonListener -> {
                 val intent = Intent(this, ArticleActivity::class.java)
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             is ListenerType.CartOnClickButtonListener -> {
                 val intent = Intent(this, CartActivity::class.java)
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
+                intent.putExtra("token",token)
+                intent.putExtra("network", network)
                 startActivity(intent)
             }
             else -> {
