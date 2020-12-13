@@ -18,7 +18,9 @@ import okhttp3.Request
 import java.io.IOException
 import java.lang.reflect.Type
 
-
+/**
+ * Activity that shows a list of viewable products, a cart button and the bill
+ */
 class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private lateinit var articleList: ArrayList<Article>
     private var cartList = ArrayList<Article>()
@@ -26,6 +28,10 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
     private lateinit var network: String
     private lateinit var token: String
 
+    /**
+     * On create function, set the activity and get token and link to database.
+     * Call a generating function for products
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles)
@@ -35,6 +41,10 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         articleList = generateArticleList()
     }
 
+    /**
+     * Generate a list of products from database
+     * @return a list of products
+     */
     private fun generateArticleList(): ArrayList<Article> {
         val listArticle = ArrayList<Article>()
 
@@ -51,10 +61,17 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         val client = OkHttpClient()
 
         client.newCall(request).enqueue(object : Callback {
+            /**
+             * Show message when the execution of request failed
+             * @exception [IOException]
+             */
             override fun onFailure(call: Call, e: IOException) {
                 println("Failed to execute request : $e")
             }
 
+            /**
+             * Collect data from database and setup all fields in the view
+             */
             override fun onResponse(call: Call, response: okhttp3.Response) {
                 val body = response.body?.string()
 
@@ -97,6 +114,12 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         return listArticle
     }
 
+    /**
+     *  Call a [ListenerType] that execute the function corresponding to a specific event.
+     *  [ListenerType.OnArticleClickListener] conduct to the detail of a product and give the cart list.
+     *  [ListenerType.CartOnClickButtonListener] conduct to the cart and give the cart list.
+     *  @param [clicked] used to find the current listener
+     */
     override fun articleEvent(clicked: ListenerType) {
         when (clicked) {
             is ListenerType.OnArticleClickListener -> {
@@ -115,6 +138,10 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         }
     }
 
+    /**
+     * Call event on button click in a view
+     * @param [v] the current view
+     */
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.buttonCart -> {
@@ -124,5 +151,13 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
     }
 }
 
+/**
+ * Used to collect data of a product in database
+ */
 class ProductsResponse(val name: String, val description: String, val price: Int, val image: Image)
+
+/**
+ * Used to the url of an image
+ * @param [url]
+ */
 class Image(val url: String)

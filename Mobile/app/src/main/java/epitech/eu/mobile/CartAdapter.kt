@@ -9,15 +9,25 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
+/**
+ * Cart adapter that will format products
+ * @param [cartList] list of products to adapt
+ */
 class CartAdapter(private val cartList: ArrayList<Article>) : RecyclerView.Adapter<CartAdapter.CartViewHolder>(),
     View.OnClickListener {
 
+    /**
+     * Cart create view holder
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.cart_item, parent, false)
         return CartViewHolder(itemView)
     }
 
+    /**
+     * Cart bind view holder
+     */
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val currentArticle = cartList[position]
 
@@ -28,6 +38,10 @@ class CartAdapter(private val cartList: ArrayList<Article>) : RecyclerView.Adapt
         holder.deleteItemButton.setOnClickListener(this)
     }
 
+
+    /**
+     * Get number of items in cart list
+     */
     override fun getItemCount() = cartList.size
 
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -38,6 +52,10 @@ class CartAdapter(private val cartList: ArrayList<Article>) : RecyclerView.Adapt
         val deleteItemButton: ImageButton = itemView.findViewById(R.id.deleteItemButton)
     }
 
+    /**
+     * Call event on button click in a view
+     * @param [v] the current view
+     */
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.deleteItemButton -> {

@@ -9,9 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * Activity that shows a list of added products, payment button and the bill
+ */
 class CartActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
     private lateinit var cartList: ArrayList<Article>
 
+    /**
+     * On create function and set the activity with data.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -29,7 +35,12 @@ class CartActivity : AppCompatActivity(), ArticleListener, View.OnClickListener 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
     }
-
+    /**
+     *  Call a [ListenerType] that execute the function corresponding to a specific event.
+     *  [ListenerType.BackToArticlesOnClickButtonListener] conduct to the products list and give the cart list.
+     *  [ListenerType.PaymentOnClickButtonListener] conduct to the payment and give the amount of bill.
+     *  @param [clicked] used to find the current listener
+     */
     override fun articleEvent(clicked: ListenerType) {
         when (clicked) {
             is ListenerType.BackToArticlesOnClickButtonListener -> {
@@ -48,6 +59,10 @@ class CartActivity : AppCompatActivity(), ArticleListener, View.OnClickListener 
         }
     }
 
+    /**
+     * Call event on button click in a view
+     * @param [v] the current view
+     */
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.buttonBack -> {
