@@ -19,6 +19,8 @@ import java.io.IOException
 
 
 class MainActivity : AppCompatActivity() {
+    lateinit var networkLocation: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -30,16 +32,11 @@ class MainActivity : AppCompatActivity() {
         val etNetworkLocation = findViewById<EditText>(R.id.et_network_location)
         val btnSubmit = findViewById<Button>(R.id.submit)
 
-        val btnQrCode = findViewById<Button>(R.id.qrcode)
-        btnQrCode.setOnClickListener {
-            scanQRCode()
-        }
-
         // set on-click listener
         btnSubmit.setOnClickListener {
             /*val userName = etUserName.text;
             val password = etPassword.text;
-            val networkLocation = etNetworkLocation.text;
+            networkLocation = etNetworkLocation.text.toString();
 
             val url = "$networkLocation/auth/local"
 
@@ -87,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
+<<<<<<< HEAD
             })*/
             val intent = Intent(this@MainActivity, ArticleActivity::class.java)
             startActivity(intent)
@@ -111,6 +109,11 @@ class MainActivity : AppCompatActivity() {
             else Toast.makeText(this, "Scanned: " + result.contents, Toast.LENGTH_LONG).show()
         } else {
             super.onActivityResult(requestCode, resultCode, data)
+=======
+            })/*
+            val intent = Intent(this@MainActivity, PaymentActivity::class.java)
+            startActivity(intent)*/
+>>>>>>> ee7ba8107b6ad159c9142276d6f2215e50c7cc63
         }
     }
 }

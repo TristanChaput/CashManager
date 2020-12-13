@@ -23,7 +23,6 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
         val token = intent.getStringExtra("token")
         val network = intent.getStringExtra("network")
 
-        println(intent.getStringExtra("network"))
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
         val buttonCart = findViewById<Button>(R.id.buttonCart)
         buttonCart.setOnClickListener(this)

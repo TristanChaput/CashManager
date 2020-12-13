@@ -15,6 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity android:name=".CartActivity"></activity>
+        <activity android:name=".PaymentActivity"></activity>
         <activity android:name=".DetailActivity" />
         <activity android:name=".ArticleActivity" />
         <activity android:name=".MainActivity">
