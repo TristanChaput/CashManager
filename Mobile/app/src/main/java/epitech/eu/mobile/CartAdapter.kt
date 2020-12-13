@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
 class CartAdapter(private val cartList: ArrayList<Article>) : RecyclerView.Adapter<CartAdapter.CartViewHolder>(),
     View.OnClickListener {
@@ -20,7 +21,7 @@ class CartAdapter(private val cartList: ArrayList<Article>) : RecyclerView.Adapt
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val currentArticle = cartList[position]
 
-        holder.imageView.setImageResource(currentArticle.img)
+        Picasso.get().load(currentArticle.img).into(holder.imageView)
         holder.textViewName.text = currentArticle.name
         holder.textViewPrice.text = currentArticle.prix.toString().plus("€")
         holder.textViewCount.text = Tools.countItemInCart(cartList, currentArticle)

@@ -23,7 +23,7 @@ class ArticleAdapter(private val articleList: ArrayList<Article>, private val li
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val currentArticle = articleList[position]
 
-        Picasso.get().load(currentArticle.img).into(holder.imageView);
+        Picasso.get().load(currentArticle.img).into(holder.imageView)
         holder.textViewTitle.text = currentArticle.name
         holder.textViewPrice.text = currentArticle.prix.toString().plus("€")
     }
