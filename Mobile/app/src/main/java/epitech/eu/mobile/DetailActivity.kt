@@ -2,23 +2,14 @@
 package epitech.eu.mobile
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.os.Build
 import android.os.Bundle
-import android.os.FileUtils.copy
-import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
-import androidx.fragment.app.FragmentActivity
 import com.squareup.picasso.Picasso
-import java.io.*
-import java.net.URL
+
 
 
 class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListener {
@@ -46,8 +37,7 @@ class DetailActivity : AppCompatActivity(), ArticleListener, View.OnClickListene
         textViewCount.text = Tools.countItemInCart(cartList, article)
         textViewBill.text = Tools.computeBill(cartList)
 
-
-        Picasso.get().load(article.img).into(imageView);
+        Picasso.get().load(article.img).into(imageView)
         textViewName.text = article.name
         textViewPrice.text = article.prix.toString().plus("€")
         textViewDescription.text = article.description
