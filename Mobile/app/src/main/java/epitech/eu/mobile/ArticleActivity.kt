@@ -11,8 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -63,13 +61,22 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
 
                 val gson = GsonBuilder().create()
 
-                val productsListType: Type = object : TypeToken<ArrayList<ProductsResponse?>?>() {}.type
+                val productsListType: Type =
+                    object : TypeToken<ArrayList<ProductsResponse?>?>() {}.type
 
                 val productsList = gson.fromJson<List<ProductsResponse>>(body, productsListType)
                 if (productsList != null) {
                     for ((index, value) in productsList.withIndex()) {
                         println("the element at $index is $value" + value.image)
-                        listArticle.add(Article("$index", value.image.url, value.name, value.description, value.price.toDouble()))
+                        listArticle.add(
+                            Article(
+                                "$index",
+                                value.image.url,
+                                value.name,
+                                value.description,
+                                value.price.toDouble()
+                            )
+                        )
                     }
                     val recyclerView = findViewById<RecyclerView>(R.id.recycler_view_articles)
                     val buttonCart = findViewById<Button>(R.id.buttonCart)
@@ -80,10 +87,10 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
                         recyclerView.layoutManager = LinearLayoutManager(this@ArticleActivity)
                         recyclerView.setHasFixedSize(true)
                         if (intent.getParcelableArrayListExtra<Parcelable>(Tools.ARRAY_INTENT_PARCELABLE) != null)
-                            cartList = intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
+                            cartList =
+                                intent.getParcelableArrayListExtra(Tools.ARRAY_INTENT_PARCELABLE)!!
                         textViewBill.text = Tools.computeBill(cartList)
                     })
-                } else {
                 }
             }
         })
@@ -104,7 +111,8 @@ class ArticleActivity : AppCompatActivity(), ArticleListener, View.OnClickListen
                 intent.putExtra(Tools.ARRAY_INTENT_PARCELABLE, cartList)
                 startActivity(intent)
             }
-            else -> {}
+            else -> {
+            }
         }
     }
 

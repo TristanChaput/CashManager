@@ -79,8 +79,8 @@ class MainActivity : AppCompatActivity() {
 
                     } else {
                         val intent = Intent(this@MainActivity, ArticleActivity::class.java)
-                        intent.putExtra("token",tmp.jwt);
-                        intent.putExtra("network", networkLocation);
+                        intent.putExtra("token",tmp.jwt)
+                        intent.putExtra("network", networkLocation)
                         startActivity(intent)
                     }
                 }
