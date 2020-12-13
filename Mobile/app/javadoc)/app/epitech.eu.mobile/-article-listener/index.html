@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArticleListener - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">epitech.eu.mobile</a>&nbsp;/&nbsp;<a href="./index.html">ArticleListener</a><br/>
+<br/>
+<h1>ArticleListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">ArticleListener</span></code>
+<p>Interface about listener on products</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="article-event.html">articleEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">articleEvent</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleListener$articleEvent(epitech.eu.mobile.ListenerType)/clicked">clicked</span><span class="symbol">:</span>&nbsp;<a href="../-listener-type/index.html"><span class="identifier">ListenerType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Used to call a <a href="../-listener-type/index.html">ListenerType</a> that execute the function corresponding to a specific event.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-article-activity/index.html">ArticleActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ArticleActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ArticleListener</span></a><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnClickListener.html"><span class="identifier">OnClickListener</span></a></code>
+<p>Activity that shows a list of viewable products, a cart button and the bill</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-cart-activity/index.html">CartActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CartActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ArticleListener</span></a><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnClickListener.html"><span class="identifier">OnClickListener</span></a></code>
+<p>Activity that shows a list of added products, payment button and the bill</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-detail-activity/index.html">DetailActivity</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DetailActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ArticleListener</span></a><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnClickListener.html"><span class="identifier">OnClickListener</span></a></code>
+<p>Activity that shows the detail of a product, cart button, back button and the bill.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

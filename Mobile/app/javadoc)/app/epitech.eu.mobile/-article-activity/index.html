@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArticleActivity - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">epitech.eu.mobile</a>&nbsp;/&nbsp;<a href="./index.html">ArticleActivity</a><br/>
+<br/>
+<h1>ArticleActivity</h1>
+<code><span class="keyword">class </span><span class="identifier">ArticleActivity</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AppCompatActivity</span><span class="symbol">, </span><a href="../-article-listener/index.html"><span class="identifier">ArticleListener</span></a><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnClickListener.html"><span class="identifier">OnClickListener</span></a></code>
+<p>Activity that shows a list of viewable products, a cart button and the bill</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ArticleActivity</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Activity that shows a list of viewable products, a cart button and the bill</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="article-event.html">articleEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">articleEvent</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleActivity$articleEvent(epitech.eu.mobile.ListenerType)/clicked">clicked</span><span class="symbol">:</span>&nbsp;<a href="../-listener-type/index.html"><span class="identifier">ListenerType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Call a <a href="../-listener-type/index.html">ListenerType</a> that execute the function corresponding to a specific event.
+<a href="../-listener-type/-on-article-click-listener/index.html">ListenerType.OnArticleClickListener</a> conduct to the detail of a product and give the cart list.
+<a href="../-listener-type/-cart-on-click-button-listener.html">ListenerType.CartOnClickButtonListener</a> conduct to the cart and give the cart list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-click.html">onClick</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onClick</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleActivity$onClick(android.view.View)/v">v</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/View.html"><span class="identifier">View</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Call event on button click in a view</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-create.html">onCreate</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onCreate</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleActivity$onCreate(android.os.Bundle)/savedInstanceState">savedInstanceState</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/os/Bundle.html"><span class="identifier">Bundle</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>On create function, set the activity and get token and link to database.
+Call a generating function for products</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

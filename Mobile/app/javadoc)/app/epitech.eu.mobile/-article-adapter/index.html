@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArticleAdapter - app</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">app</a>&nbsp;/&nbsp;<a href="../index.html">epitech.eu.mobile</a>&nbsp;/&nbsp;<a href="./index.html">ArticleAdapter</a><br/>
+<br/>
+<h1>ArticleAdapter</h1>
+<code><span class="keyword">class </span><span class="identifier">ArticleAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Adapter</span><span class="symbol">&lt;</span><a href="-article-view-holder/index.html"><span class="identifier">ArticleViewHolder</span></a><span class="symbol">&gt;</span></code>
+<p>Article adapter that will format products</p>
+<h3>Parameters</h3>
+<p><a name="articleList"></a>
+<code>articleList</code> - list of products to adapt</p>
+<p><a name="listener"></a>
+<code>listener</code> - implements interface that contains article event on a listener type</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-article-view-holder/index.html">ArticleViewHolder</a></p>
+</td>
+<td>
+<code><span class="keyword">inner</span> <span class="keyword">class </span><span class="identifier">ArticleViewHolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ViewHolder</span><span class="symbol">, </span><a href="https://developer.android.com/reference/android/view/View/OnClickListener.html"><span class="identifier">OnClickListener</span></a></code>
+<p>Article view holder</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ArticleAdapter</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$<init>(((epitech.eu.mobile.Article)), epitech.eu.mobile.ArticleListener)/articleList">articleList</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">&lt;</span><a href="../-article/index.html"><span class="identifier">Article</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$<init>(((epitech.eu.mobile.Article)), epitech.eu.mobile.ArticleListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-article-listener/index.html"><span class="identifier">ArticleListener</span></a><span class="symbol">)</span></code>
+<p>Article adapter that will format products</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-item-count.html">getItemCount</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getItemCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
+<p>Get number of items in product list</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-bind-view-holder.html">onBindViewHolder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onBindViewHolder</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$onBindViewHolder(epitech.eu.mobile.ArticleAdapter.ArticleViewHolder, kotlin.Int)/holder">holder</span><span class="symbol">:</span>&nbsp;<a href="-article-view-holder/index.html"><span class="identifier">ArticleViewHolder</span></a><span class="symbol">, </span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$onBindViewHolder(epitech.eu.mobile.ArticleAdapter.ArticleViewHolder, kotlin.Int)/position">position</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Article bind view holder</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="on-create-view-holder.html">onCreateViewHolder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">onCreateViewHolder</span><span class="symbol">(</span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="https://developer.android.com/reference/android/view/ViewGroup.html"><span class="identifier">ViewGroup</span></a><span class="symbol">, </span><span class="identifier" id="epitech.eu.mobile.ArticleAdapter$onCreateViewHolder(android.view.ViewGroup, kotlin.Int)/viewType">viewType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-article-view-holder/index.html"><span class="identifier">ArticleViewHolder</span></a></code>
+<p>Article create view holder</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
